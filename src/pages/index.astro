@@ -1,11 +1,870 @@
----
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+---
+import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout>
-	<Welcome />
+  <main class="universe">
+    <!-- 星空背景 -->
+    <div class="space-background" aria-hidden="true">
+      <div class="starfield" data-starfield></div>
+      <div class="nebula nebula-one"></div>
+      <div class="nebula nebula-two"></div>
+
+      <div class="pixel-galaxy galaxy-one"></div>
+      <div class="pixel-galaxy galaxy-two"></div>
+
+      <div class="planet planet-main">
+        <div class="planet-ring"></div>
+      </div>
+
+      <div class="planet planet-small"></div>
+    </div>
+
+    <!-- 导航栏 -->
+    <header class="navigation">
+      <a href="#" class="brand">
+        <span class="brand-icon">✦</span>
+        DEEP SPACE
+      </a>
+
+      <nav>
+        <a href="#explore">EXPLORE</a>
+        <a href="#observations">OBSERVATIONS</a>
+        <a href="#about">ABOUT</a>
+      </nav>
+    </header>
+
+    <!-- 全屏首页 -->
+    <section class="hero">
+      <div class="hero-content">
+        <div class="system-status">
+          <span class="status-dot"></span>
+          OBSERVATORY SYSTEM ONLINE
+        </div>
+
+        <p class="hero-label">A JOURNEY THROUGH THE COSMOS</p>
+
+        <h1>
+          BEYOND<br />
+          <span>THE STARS.</span>
+        </h1>
+
+        <p class="hero-description">
+          Exploring the mysteries of the universe,
+          from distant galaxies to the deepest corners
+          of space and time.
+        </p>
+
+        <a href="#explore" class="pixel-button">
+          ENTER THE UNIVERSE <span>→</span>
+        </a>
+      </div>
+
+      <div class="hero-coordinate">
+        <span>LOCATION: MILKY WAY</span>
+        <span>SECTOR: 001 / DEEP SPACE</span>
+      </div>
+
+      <a href="#explore" class="scroll-indicator">
+        <span>SCROLL TO EXPLORE</span>
+        <span class="scroll-arrow">↓</span>
+      </a>
+    </section>
+
+    <!-- 探索栏目 -->
+    <section id="explore" class="content-section">
+      <div class="section-heading">
+        <p class="section-label">01 / EXPLORE</p>
+        <h2>THE UNKNOWN.</h2>
+        <p>
+          A collection of interests, discoveries
+          and explorations across the universe.
+        </p>
+      </div>
+
+      <div class="feature-grid">
+        <article class="feature-card">
+          <span class="card-number">01</span>
+          <div class="card-icon">✦</div>
+          <h3>ASTRONOMY</h3>
+          <p>
+            Stars, galaxies, celestial objects
+            and the wonders of astronomical observation.
+          </p>
+          <span class="card-link">EXPLORE →</span>
+        </article>
+
+        <article class="feature-card">
+          <span class="card-number">02</span>
+          <div class="card-icon">◉</div>
+          <h3>DEEP SPACE</h3>
+          <p>
+            Cosmic structures, black holes,
+            dark matter and the physics of the universe.
+          </p>
+          <span class="card-link">EXPLORE →</span>
+        </article>
+
+        <article class="feature-card">
+          <span class="card-number">03</span>
+          <div class="card-icon">⌖</div>
+          <h3>OBSERVATIONS</h3>
+          <p>
+            A growing archive of observations,
+            astronomical images and exploration notes.
+          </p>
+          <span class="card-link">EXPLORE →</span>
+        </article>
+      </div>
+    </section>
+
+    <!-- 观测记录 -->
+    <section id="observations" class="content-section observation-section">
+      <div class="section-heading">
+        <p class="section-label">02 / OBSERVATION LOG</p>
+        <h2>THE COSMIC ARCHIVE.</h2>
+      </div>
+
+      <div class="archive-panel">
+        <div class="archive-top">
+          <span>OBSERVATORY TERMINAL</span>
+          <span class="status-dot"></span>
+        </div>
+
+        <div class="archive-message">
+          <span class="terminal-symbol">&gt;</span>
+          A NEW JOURNEY BEGINS...
+        </div>
+
+        <p>
+          Future observation records, celestial images
+          and astronomical notes will be collected here.
+        </p>
+
+        <span class="terminal-cursor">_</span>
+      </div>
+    </section>
+
+    <!-- 关于 -->
+    <section id="about" class="content-section about-section">
+      <p class="section-label">03 / ABOUT THIS SPACE</p>
+      <h2>LOOK UP.<br />WONDER MORE.</h2>
+
+      <p>
+        The universe is vast, mysterious and endlessly fascinating.
+        This is a personal space dedicated to exploring astronomy,
+        deep space physics and the unknown.
+      </p>
+    </section>
+
+    <footer class="footer">
+      <span>DEEP SPACE ARCHIVE</span>
+      <span>KEEP EXPLORING THE UNIVERSE ✦</span>
+    </footer>
+  </main>
 </Layout>
+
+<script>
+  const starfield = document.querySelector<HTMLElement>('[data-starfield]');
+
+  if (starfield && starfield.childElementCount === 0) {
+    const fragment = document.createDocumentFragment();
+
+    for (let i = 0; i < 150; i++) {
+      const star = document.createElement('span');
+
+      star.className = i % 12 === 0 ? 'star star-spark' : 'star';
+
+      star.style.setProperty('--x', `${Math.random() * 100}%`);
+      star.style.setProperty('--y', `${Math.random() * 100}%`);
+      star.style.setProperty('--delay', `${Math.random() * 5}s`);
+      star.style.setProperty('--duration', `${2 + Math.random() * 4}s`);
+      star.style.setProperty('--opacity', `${0.3 + Math.random() * 0.7}`);
+
+      fragment.appendChild(star);
+    }
+
+    starfield.appendChild(fragment);
+  }
+</script>
+
+<style>
+  :global(*) {
+    box-sizing: border-box;
+  }
+
+  :global(html) {
+    scroll-behavior: smooth;
+    background: #03030b;
+  }
+
+  :global(body) {
+    margin: 0;
+    color: #e8e5ff;
+    background: #03030b;
+    font-family: "Courier New", monospace;
+  }
+
+  .universe {
+    position: relative;
+    overflow: hidden;
+    background: #03030b;
+  }
+
+  /* 星空背景 */
+
+  .space-background {
+    position: absolute;
+    inset: 0 0 auto;
+    height: 100vh;
+    min-height: 700px;
+    overflow: hidden;
+    pointer-events: none;
+    background:
+      radial-gradient(ellipse at 75% 40%, #171039 0%, transparent 45%),
+      radial-gradient(ellipse at 20% 65%, #11102f 0%, transparent 40%),
+      #03030b;
+  }
+
+  .space-background::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to bottom,
+      transparent 55%,
+      #03030b 100%
+    );
+  }
+
+  .starfield {
+    position: absolute;
+    inset: 0;
+  }
+
+  .star {
+    position: absolute;
+    left: var(--x);
+    top: var(--y);
+    width: 2px;
+    height: 2px;
+    opacity: var(--opacity);
+    background: #d8d4ff;
+    box-shadow: 0 0 7px #8982ff;
+    animation: twinkle var(--duration) ease-in-out infinite;
+    animation-delay: var(--delay);
+  }
+
+  .star-spark {
+    width: 3px;
+    height: 3px;
+    background: #fff;
+    box-shadow: 0 0 12px #9d91ff;
+  }
+
+  .star-spark::before,
+  .star-spark::after {
+    content: "";
+    position: absolute;
+    background: #b7aaff;
+  }
+
+  .star-spark::before {
+    width: 1px;
+    height: 12px;
+    left: 1px;
+    top: -5px;
+  }
+
+  .star-spark::after {
+    width: 12px;
+    height: 1px;
+    left: -5px;
+    top: 1px;
+  }
+
+  /* 漂移星云 */
+
+  .nebula {
+    position: absolute;
+    width: 450px;
+    height: 300px;
+    border-radius: 50%;
+    filter: blur(65px);
+    opacity: 0.22;
+    animation: nebula-drift 22s ease-in-out infinite alternate;
+  }
+
+  .nebula-one {
+    background: #5536bc;
+    top: 15%;
+    right: 10%;
+  }
+
+  .nebula-two {
+    background: #253da8;
+    bottom: 5%;
+    left: 5%;
+    animation-delay: -8s;
+  }
+
+  /* 像素星系 */
+
+  .pixel-galaxy {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    background: #d9d6ff;
+    filter: drop-shadow(0 0 8px #7163ff);
+    opacity: 0.8;
+  }
+
+  .galaxy-one {
+    top: 27%;
+    left: 12%;
+    box-shadow:
+      8px 0 #aaa0ff,
+      16px 8px #7566db,
+      24px 8px #6552c6,
+      32px 16px #5040a5,
+      40px 16px #4a399a,
+      48px 24px #6252c3,
+      56px 32px #aaa0ff,
+      64px 40px #d7d4ff,
+      56px 48px #8a7be8,
+      48px 56px #6655c8,
+      40px 64px #4b3c9e,
+      32px 64px #5140aa,
+      24px 56px #7667d5,
+      16px 48px #b3aaff;
+    transform: rotate(-20deg);
+  }
+
+  .galaxy-two {
+    top: 42%;
+    right: 13%;
+    transform: scale(1.5);
+    box-shadow:
+      8px 0 #bcb5ff,
+      16px 8px #8173ed,
+      24px 16px #5546b2,
+      32px 24px #46349c,
+      24px 32px #7362d5,
+      16px 40px #b8afff,
+      8px 32px #6c5acc,
+      0 24px #4735a1;
+  }
+
+  /* 像素行星 */
+
+  .planet {
+    position: absolute;
+    border-radius: 50%;
+    image-rendering: pixelated;
+  }
+
+  .planet-main {
+    width: clamp(190px, 27vw, 340px);
+    aspect-ratio: 1;
+    right: 13%;
+    top: 23%;
+    background:
+      radial-gradient(
+        circle at 33% 28%,
+        #e4dcff 0%,
+        #9990ff 9%,
+        #6654d5 24%,
+        #342b83 53%,
+        #11132e 76%
+      );
+    box-shadow:
+      inset -30px -20px 0 rgba(0, 0, 0, 0.45),
+      0 0 60px rgba(112, 91, 255, 0.22);
+    animation: planet-float 12s ease-in-out infinite;
+  }
+
+  .planet-main::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background: repeating-linear-gradient(
+      90deg,
+      transparent 0 9px,
+      rgba(20, 13, 65, 0.2) 9px 17px
+    );
+    background-size: 200% 100%;
+    animation: planet-turn 25s linear infinite;
+  }
+
+  .planet-main::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background:
+      repeating-linear-gradient(
+        0deg,
+        transparent 0 7px,
+        rgba(0, 0, 0, 0.13) 7px 9px
+      );
+  }
+
+  .planet-ring {
+    position: absolute;
+    width: 155%;
+    height: 36%;
+    top: 32%;
+    left: -27%;
+    border: 4px solid rgba(158, 143, 255, 0.65);
+    border-radius: 50%;
+    transform: rotate(-24deg);
+    box-shadow: 0 0 12px #6e5bdf;
+    z-index: -1;
+  }
+
+  .planet-small {
+    width: 85px;
+    height: 85px;
+    left: 18%;
+    bottom: 15%;
+    background: radial-gradient(
+      circle at 30% 25%,
+      #d7e7ff,
+      #647bdb 35%,
+      #282c75 70%,
+      #101126
+    );
+    box-shadow: 0 0 30px rgba(96, 115, 255, 0.5);
+    animation: planet-float 9s ease-in-out infinite reverse;
+  }
+
+  /* 导航栏 */
+
+  .navigation {
+    position: absolute;
+    z-index: 10;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 28px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(150, 135, 255, 0.12);
+  }
+
+  .brand {
+    color: #eeeaff;
+    text-decoration: none;
+    font-weight: bold;
+    letter-spacing: 3px;
+    font-size: 17px;
+  }
+
+  .brand-icon {
+    color: #a79aff;
+    margin-right: 8px;
+  }
+
+  .navigation nav {
+    display: flex;
+    gap: 32px;
+  }
+
+  .navigation nav a {
+    font-size: 11px;
+    letter-spacing: 2px;
+    color: #aaa4cb;
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .navigation nav a:hover {
+    color: #fff;
+  }
+
+  /* 首页文字 */
+
+  .hero {
+    position: relative;
+    min-height: 100vh;
+    min-height: 100svh;
+    display: flex;
+    align-items: center;
+    padding: 130px 10% 110px;
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 3;
+    max-width: 620px;
+  }
+
+  .system-status {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 11px;
+    letter-spacing: 2px;
+    color: #a9a1d4;
+    margin-bottom: 45px;
+  }
+
+  .status-dot {
+    display: inline-block;
+    width: 7px;
+    height: 7px;
+    background: #8eecba;
+    box-shadow: 0 0 10px #8eecba;
+    border-radius: 50%;
+  }
+
+  .hero-label,
+  .section-label {
+    color: #8d83d9;
+    font-size: 11px;
+    letter-spacing: 4px;
+  }
+
+  .hero h1 {
+    font-size: clamp(55px, 8vw, 105px);
+    line-height: 0.98;
+    letter-spacing: -7px;
+    margin: 20px 0;
+    color: #f1efff;
+    text-shadow: 4px 4px 0 #28204e;
+  }
+
+  .hero h1 span {
+    color: #9384ed;
+  }
+
+  .hero-description {
+    max-width: 440px;
+    color: #aaa8c5;
+    font-size: 14px;
+    line-height: 2;
+    margin: 30px 0;
+  }
+
+  .pixel-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 25px;
+    padding: 17px 22px;
+    background: #7060c8;
+    border: 2px solid #a397ff;
+    box-shadow: 4px 4px 0 #292052;
+    color: #fff;
+    text-decoration: none;
+    font-size: 11px;
+    letter-spacing: 1px;
+    transition: transform 0.2s;
+  }
+
+  .pixel-button:hover {
+    transform: translate(-2px, -2px);
+  }
+
+  .hero-coordinate {
+    position: absolute;
+    z-index: 3;
+    bottom: 75px;
+    right: 7%;
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+    color: #716c99;
+    font-size: 9px;
+    letter-spacing: 2px;
+  }
+
+  .scroll-indicator {
+    position: absolute;
+    z-index: 3;
+    bottom: 25px;
+    left: 10%;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    color: #827da7;
+    font-size: 9px;
+    letter-spacing: 2px;
+    text-decoration: none;
+  }
+
+  .scroll-arrow {
+    color: #c5bcff;
+    animation: arrow-bounce 1.5s infinite;
+  }
+
+  /* 内容栏目 */
+
+  .content-section {
+    position: relative;
+    z-index: 2;
+    width: min(1080px, 84%);
+    margin: 0 auto;
+    padding: 120px 0;
+    border-top: 1px solid rgba(148, 130, 255, 0.16);
+  }
+
+  .section-heading {
+    margin-bottom: 55px;
+  }
+
+  .section-heading h2,
+  .about-section h2 {
+    font-size: clamp(32px, 5vw, 56px);
+    letter-spacing: -3px;
+    margin: 15px 0;
+    color: #eeebff;
+  }
+
+  .section-heading > p:last-child {
+    max-width: 500px;
+    color: #9290b2;
+    font-size: 13px;
+    line-height: 2;
+  }
+
+  .feature-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+  }
+
+  .feature-card {
+    position: relative;
+    min-height: 270px;
+    padding: 28px;
+    border: 1px solid #282344;
+    background: rgba(15, 13, 35, 0.8);
+    transition: transform 0.25s, border-color 0.25s;
+  }
+
+  .feature-card:hover {
+    transform: translateY(-7px);
+    border-color: #7767d4;
+  }
+
+  .card-number {
+    color: #68618d;
+    font-size: 11px;
+  }
+
+  .card-icon {
+    margin: 25px 0;
+    color: #a69aff;
+    font-size: 32px;
+    text-shadow: 0 0 15px #6352d1;
+  }
+
+  .feature-card h3 {
+    font-size: 14px;
+    letter-spacing: 2px;
+  }
+
+  .feature-card p {
+    color: #9692b4;
+    font-size: 12px;
+    line-height: 2;
+  }
+
+  .card-link {
+    display: inline-block;
+    margin-top: 18px;
+    color: #a69aff;
+    font-size: 10px;
+    letter-spacing: 2px;
+  }
+
+  /* 观测档案 */
+
+  .archive-panel {
+    padding: 30px;
+    background: #080916;
+    border: 1px solid #37305f;
+    box-shadow: 8px 8px 0 #111026;
+  }
+
+  .archive-top {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 18px;
+    border-bottom: 1px solid #282343;
+    color: #9189bd;
+    font-size: 10px;
+    letter-spacing: 2px;
+  }
+
+  .archive-message {
+    margin-top: 35px;
+    color: #b8adff;
+    font-size: 17px;
+  }
+
+  .terminal-symbol {
+    color: #8eecba;
+    margin-right: 12px;
+  }
+
+  .archive-panel p {
+    color: #85839f;
+    font-size: 12px;
+    line-height: 2;
+  }
+
+  .terminal-cursor {
+    color: #a69aff;
+    animation: cursor-blink 1s steps(2) infinite;
+  }
+
+  /* 关于 */
+
+  .about-section {
+    max-width: 760px;
+  }
+
+  .about-section > p:last-child {
+    color: #a29fbd;
+    line-height: 2.2;
+    font-size: 14px;
+  }
+
+  .footer {
+    position: relative;
+    z-index: 2;
+    padding: 30px 8%;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    border-top: 1px solid #25213e;
+    color: #706c91;
+    font-size: 9px;
+    letter-spacing: 2px;
+  }
+
+  /* 动画 */
+
+  @keyframes twinkle {
+    0%, 100% { opacity: 0.25; }
+    50% { opacity: 1; }
+  }
+
+  @keyframes nebula-drift {
+    from { transform: translate(-20px, 10px) scale(0.95); }
+    to { transform: translate(40px, -30px) scale(1.15); }
+  }
+
+  @keyframes planet-float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-16px); }
+  }
+
+  @keyframes planet-turn {
+    from { background-position: 0 0; }
+    to { background-position: 200% 0; }
+  }
+
+  @keyframes arrow-bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(5px); }
+  }
+
+  @keyframes cursor-blink {
+    50% { opacity: 0; }
+  }
+
+  /* 手机端 */
+
+  @media (max-width: 700px) {
+    .navigation {
+      padding: 22px 6%;
+    }
+
+    .brand {
+      font-size: 13px;
+      letter-spacing: 1px;
+    }
+
+    .navigation nav {
+      gap: 12px;
+    }
+
+    .navigation nav a {
+      font-size: 8px;
+      letter-spacing: 0;
+    }
+
+    .hero {
+      padding: 150px 7% 120px;
+      align-items: center;
+    }
+
+    .hero h1 {
+      font-size: clamp(48px, 13vw, 75px);
+      letter-spacing: -4px;
+    }
+
+    .hero-description {
+      max-width: 320px;
+    }
+
+    .planet-main {
+      width: 190px;
+      right: -35px;
+      top: 18%;
+      opacity: 0.65;
+    }
+
+    .planet-small {
+      width: 55px;
+      height: 55px;
+      left: 8%;
+      bottom: 13%;
+    }
+
+    .galaxy-one {
+      left: 3%;
+    }
+
+    .galaxy-two {
+      right: 5%;
+    }
+
+    .hero-coordinate {
+      display: none;
+    }
+
+    .feature-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .content-section {
+      width: 86%;
+      padding: 85px 0;
+    }
+
+    .feature-card {
+      min-height: 220px;
+    }
+
+    .footer {
+      flex-direction: column;
+      line-height: 2;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      scroll-behavior: auto !important;
+    }
+  }
+</style>
