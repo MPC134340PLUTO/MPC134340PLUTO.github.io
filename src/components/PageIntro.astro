@@ -1,0 +1,71 @@
+
+---
+const {
+  eyebrow = 'PIXEL UNIVERSE',
+  title = 'UNKNOWN',
+  description = ''
+} = Astro.props;
+---
+
+<section class="page-intro" aria-labelledby="page-title">
+
+  <p class="eyebrow">
+    {eyebrow}
+  </p>
+
+  <h1 id="page-title">
+    {title}
+  </h1>
+
+  {description && (
+    <p class="page-description">
+      {description}
+    </p>
+  )}
+
+</section>
+
+<style>
+  .page-intro {
+    margin-bottom: 48px;
+    padding: 15px 0 25px;
+    border-bottom: 1px solid #344967;
+  }
+
+  .eyebrow {
+    color: #83ced2;
+    font-family: monospace;
+    font-size: 13px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+  }
+
+  h1 {
+    margin: 22px 0;
+    color: #e6eaf4;
+    font-family: "Microsoft YaHei", "PingFang SC", "Noto Sans SC", sans-serif;
+    font-weight: 800;
+    font-size: clamp(38px, 6vw, 68px);
+    line-height: 1.15;
+    letter-spacing: .03em;
+    text-shadow: 3px 3px 0 #342957;
+  }
+
+  .page-description {
+    max-width: 800px;
+    color: #9aaac0;
+    font-size: 17px;
+    line-height: 2;
+  }
+
+
+  @media (max-width: 600px) {
+    .page-intro {
+      margin-bottom: 32px;
+    }
+
+    h1 {
+      font-size: 38px;
+    }
+  }
+</style>

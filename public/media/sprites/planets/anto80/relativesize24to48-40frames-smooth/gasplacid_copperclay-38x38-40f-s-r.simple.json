@@ -1,0 +1,13 @@
+{
+  "image": "gasplacid_copperclay-38x38-40f-s-r.png",
+  "frame_width": 38,
+  "frame_height": 38,
+  "pivot_x": 19,
+  "pivot_y": 19,
+  "columns": 20,
+  "rows": 2,
+  "frame_count": 40,
+  "frame_delay": 2,
+  "fps": 30,
+  "order": "left-to-right, top-to-bottom"
+}

@@ -1,0 +1,38 @@
+---
+const nodes = [
+  { name:'首页', en:'HOME', href:'/', description:'返回深空首页', image:'planet00.png', x:50, y:50 },
+  { name:'个人舱', en:'CABIN', href:'/cabin/', description:'关于我与个人空间', image:'planet03.png', x:25, y:18 },
+  { name:'知识档案', en:'ARCHIVE', href:'/archive/', description:'算法、科研与技术笔记', image:'planet05.png', x:75, y:18 },
+  { name:'太阳系', en:'SOLAR SYSTEM', href:'/solar-system/', description:'认识太阳与八大行星', image:'planet07.png', x:85, y:50 },
+  { name:'记忆星球', en:'MEMORIES', href:'/memories/', description:'收藏与个人记忆', image:'planet02.png', x:75, y:81 },
+  { name:'深空观测站', en:'OBSERVATORY', href:'/observatory/', description:'天文影像与资料', image:'planet08.png', x:25, y:81 },
+  { name:'星际机库', en:'HANGAR', href:'/hangar/', description:'选择飞船并开始航行', image:'planet09.png', x:15, y:50 },
+];
+---
+<nav class="exploration-map" aria-label="星际地图地点导航">
+  <div class="map-orbit orbit-a" aria-hidden="true"></div>
+  <div class="map-orbit orbit-b" aria-hidden="true"></div>
+  {nodes.map(node => (
+    <a href={node.href} class="map-destination" style={`--x:${node.x}%;--y:${node.y}%`}>
+      <img src={node.href === "/hangar/" ? "/media/images/hangar/scout.png" : `/media/images/planets/kenney-generic/${node.image}`} alt="" loading="lazy" />
+      <strong>{node.name}</strong><small lang="en">{node.en}</small>
+      <span class="map-description">{node.description}</span>
+    </a>
+  ))}
+</nav>
+<style>
+  .exploration-map { position:relative; isolation:isolate; min-height:640px; margin:22px 0 0; overflow:hidden; background:radial-gradient(ellipse at center,rgba(82,123,174,.22),transparent 70%),linear-gradient(rgba(11,20,40,.65),rgba(11,20,40,.75)),url('/media/images/backgrounds/starfields/Parallax80.png') center/cover; }
+  .map-orbit { position:absolute; left:50%; top:49%; border:1px solid rgba(131,206,210,.32); width:72%; height:64%; border-radius:50%; transform:translate(-50%,-50%) rotate(-16deg); pointer-events:none; }
+  .orbit-b { width:80%; height:56%; transform:translate(-50%,-50%) rotate(22deg); border-color:rgba(161,139,220,.38); }
+  .map-destination { position:absolute; left:var(--x); top:var(--y); transform:translate(-50%,-50%); display:flex; flex-direction:column; align-items:center; gap:4px; color:var(--text); text-decoration:none; text-align:center; width:clamp(110px,17%,185px); padding:8px 0; }
+  .map-destination img { width:clamp(52px,7vw,88px); height:76px; object-fit:contain; image-rendering:pixelated; filter:drop-shadow(0 0 9px rgba(161,139,220,.4)); }
+  .map-destination strong { font-size:16px; line-height:1.4; }
+  .map-destination small { color:var(--cyan); font:12px monospace; }
+  .map-description { color:var(--muted); font-size:13px; opacity:0; line-height:1.5; }
+  .map-destination:hover,.map-destination:focus-visible { color:var(--cyan); }
+  .map-destination:hover img,.map-destination:focus-visible img { filter:drop-shadow(0 0 16px rgba(131,206,210,.75)); }
+  .map-destination:hover .map-description,.map-destination:focus-visible .map-description { opacity:1; }
+  .map-destination:focus-visible { outline:2px solid var(--cyan); outline-offset:3px; }
+  @media(max-width:700px) { .exploration-map { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:18px 8px; min-height:0; padding:24px 10px; } .map-orbit { display:none; } .map-destination { position:relative; left:auto; top:auto; transform:none; width:100%; } .map-description { opacity:1; } }
+  @media(max-width:340px) { .exploration-map { grid-template-columns:1fr; } }
+</style>

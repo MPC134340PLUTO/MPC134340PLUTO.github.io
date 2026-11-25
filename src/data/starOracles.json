@@ -1,0 +1,1002 @@
+[
+  {
+    "id": 1,
+    "name": "Sirius",
+    "cn": "天狼星",
+    "constellation": "大犬座",
+    "fortune": "适合启动一个小计划，先完成第一步。给自己一个清楚的起点。",
+    "challenge": "读五页一直想读的书",
+    "fact": "天狼星（Sirius）位于大犬座。天狼星是夜空中视亮度最高的恒星，伴星是一颗白矮星。星表编号 HR 2491，星表 V 波段参考星等为 -1.44。",
+    "source": "https://iauarchive.eso.org/public/themes/naming_stars/"
+  },
+  {
+    "id": 2,
+    "name": "Canopus",
+    "cn": "老人星",
+    "constellation": "船底座",
+    "fortune": "适合启动一个小计划，先完成第一步。不妨把目标缩小到可执行的范围。",
+    "challenge": "写下今天最重要的一件事",
+    "fact": "老人星（Canopus）位于船底座。老人星位于南天，是夜空中视亮度仅次于天狼星的恒星。星表编号 HR 2326，星表 V 波段参考星等为 -0.62。",
+    "source": "https://iauarchive.eso.org/public/themes/naming_stars/"
+  },
+  {
+    "id": 3,
+    "name": "Arcturus",
+    "cn": "大角星",
+    "constellation": "牧夫座",
+    "fortune": "适合启动一个小计划，先完成第一步。遇到卡点时，换个角度看看。",
+    "challenge": "整理桌面上的五件物品",
+    "fact": "大角星（Arcturus）位于牧夫座。星表编号 HR 5340，星表 V 波段参考星等为 -0.05。",
+    "source": "https://iauarchive.eso.org/public/themes/naming_stars/"
+  },
+  {
+    "id": 4,
+    "name": "Vega",
+    "cn": "织女一",
+    "constellation": "天琴座",
+    "fortune": "适合启动一个小计划，先完成第一步。为突发的灵感保留几分钟。",
+    "challenge": "做十分钟拉伸",
+    "fact": "织女一（Vega）位于天琴座。织女一与河鼓二、天津四组成夏季大三角。星表编号 HR 7001，星表 V 波段参考星等为 0.03。",
+    "source": "https://iauarchive.eso.org/public/themes/naming_stars/"
+  },
+  {
+    "id": 5,
+    "name": "Capella",
+    "cn": "五车二",
+    "constellation": "御夫座",
+    "fortune": "适合启动一个小计划，先完成第一步。从一件容易完成的事找回节奏。",
+    "challenge": "给朋友发一条问候",
+    "fact": "五车二（Capella）位于御夫座。星表编号 HR 1708，星表 V 波段参考星等为 0.08。",
+    "source": "https://iauarchive.eso.org/public/themes/naming_stars/"
+  },
+  {
+    "id": 6,
+    "name": "Rigel",
+    "cn": "参宿七",
+    "constellation": "猎户座",
+    "fortune": "适合启动一个小计划，先完成第一步。今天也可以为自己留一点余地。",
+    "challenge": "记录一个新的知识点",
+    "fact": "参宿七（Rigel）位于猎户座。星表编号 HR 1713，星表 V 波段参考星等为 0.18。",
+    "source": "https://iauarchive.eso.org/public/themes/naming_stars/"
+  },
+  {
+    "id": 7,
+    "name": "Procyon",
+    "cn": "南河三",
+    "constellation": "小犬座",
+    "fortune": "适合启动一个小计划，先完成第一步。用温和的语气与人交流。",
+    "challenge": "散步十五分钟",
+    "fact": "南河三（Procyon）位于小犬座。星表编号 HR 2943，星表 V 波段参考星等为 0.40。",
+    "source": "https://iauarchive.eso.org/public/themes/naming_stars/"
+  },
+  {
+    "id": 8,
+    "name": "Betelgeuse",
+    "cn": "参宿四",
+    "constellation": "猎户座",
+    "fortune": "适合启动一个小计划，先完成第一步。记住过程中的一个小收获。",
+    "challenge": "整理一个旧文件夹",
+    "fact": "参宿四（Betelgeuse）位于猎户座。参宿四是猎户座中著名的红超巨星，亮度随时间变化。星表编号 HR 2061，星表 V 波段参考星等为 0.45。星表数值为参考值，实际亮度会变化。",
+    "source": "https://iauarchive.eso.org/public/themes/naming_stars/"
+  },
+  {
+    "id": 9,
+    "name": "Achernar",
+    "cn": "水委一",
+    "constellation": "波江座",
+    "fortune": "适合启动一个小计划，先完成第一步。在行动前想清楚最重要的理由。",
+    "challenge": "给自己泡一杯喜欢的饮品",
+    "fact": "水委一（Achernar）位于波江座。星表编号 HR 472，星表 V 波段参考星等为 0.45。",
+    "source": "https://iauarchive.eso.org/public/themes/naming_stars/"
+  },
+  {
+    "id": 10,
+    "name": "Hadar",
+    "cn": "马腹一",
+    "constellation": "半人马座",
+    "fortune": "适合启动一个小计划，先完成第一步。结束时给自己一个满意的收尾。",
+    "challenge": "拍一张天空照片",
+    "fact": "马腹一（Hadar）位于半人马座。星表编号 HR 5267，星表 V 波段参考星等为 0.61。",
+    "source": "https://iauarchive.eso.org/public/themes/naming_stars/"
+  },
+  {
+    "id": 11,
+    "name": "Altair",
+    "cn": "河鼓二",
+    "constellation": "天鹰座",
+    "fortune": "适合稳步推进，把注意力放在眼前。给自己一个清楚的起点。",
+    "challenge": "学一个新的快捷键",
+    "fact": "河鼓二（Altair）位于天鹰座。河鼓二与织女一、天津四组成夏季大三角。星表编号 HR 7557，星表 V 波段参考星等为 0.76。",
+    "source": "https://iauarchive.eso.org/public/themes/naming_stars/"
+  },
+  {
+    "id": 12,
+    "name": "Acrux",
+    "cn": "十字架二",
+    "constellation": "南十字座",
+    "fortune": "适合稳步推进，把注意力放在眼前。不妨把目标缩小到可执行的范围。",
+    "challenge": "复习一道旧题",
+    "fact": "十字架二（Acrux）位于南十字座。星表编号 HR 4730，星表 V 波段参考星等为 1.33。",
+    "source": "https://iauarchive.eso.org/public/themes/naming_stars/"
+  },
+  {
+    "id": 13,
+    "name": "Aldebaran",
+    "cn": "毕宿五",
+    "constellation": "金牛座",
+    "fortune": "适合稳步推进，把注意力放在眼前。遇到卡点时，换个角度看看。",
+    "challenge": "写下一个问题并尝试回答",
+    "fact": "毕宿五（Aldebaran）位于金牛座。星表编号 HR 1457，星表 V 波段参考星等为 0.87。",
+    "source": "https://iauarchive.eso.org/public/themes/naming_stars/"
+  },
+  {
+    "id": 14,
+    "name": "Antares",
+    "cn": "心宿二",
+    "constellation": "天蝎座",
+    "fortune": "适合稳步推进，把注意力放在眼前。为突发的灵感保留几分钟。",
+    "challenge": "观察窗外的云",
+    "fact": "心宿二（Antares）位于天蝎座。星表编号 HR 6134，星表 V 波段参考星等为 1.06。",
+    "source": "https://iauarchive.eso.org/public/themes/naming_stars/"
+  },
+  {
+    "id": 15,
+    "name": "Spica",
+    "cn": "角宿一",
+    "constellation": "室女座",
+    "fortune": "适合稳步推进，把注意力放在眼前。从一件容易完成的事找回节奏。",
+    "challenge": "给未来的自己写一句话",
+    "fact": "角宿一（Spica）位于室女座。星表编号 HR 5056，星表 V 波段参考星等为 0.98。",
+    "source": "https://iauarchive.eso.org/public/themes/naming_stars/"
+  },
+  {
+    "id": 16,
+    "name": "Pollux",
+    "cn": "北河三",
+    "constellation": "双子座",
+    "fortune": "适合稳步推进，把注意力放在眼前。今天也可以为自己留一点余地。",
+    "challenge": "听一首以前喜欢的歌",
+    "fact": "北河三（Pollux）位于双子座。星表编号 HR 2990，星表 V 波段参考星等为 1.16。",
+    "source": "https://iauarchive.eso.org/public/themes/naming_stars/"
+  },
+  {
+    "id": 17,
+    "name": "Fomalhaut",
+    "cn": "北落师门",
+    "constellation": "南鱼座",
+    "fortune": "适合稳步推进，把注意力放在眼前。用温和的语气与人交流。",
+    "challenge": "把一个大任务拆成三步",
+    "fact": "北落师门（Fomalhaut）位于南鱼座。星表编号 HR 8728，星表 V 波段参考星等为 1.17。",
+    "source": "https://iauarchive.eso.org/public/themes/naming_stars/"
+  },
+  {
+    "id": 18,
+    "name": "Deneb",
+    "cn": "天津四",
+    "constellation": "天鹅座",
+    "fortune": "适合稳步推进，把注意力放在眼前。记住过程中的一个小收获。",
+    "challenge": "备份一份重要资料",
+    "fact": "天津四（Deneb）位于天鹅座。天津四是夏季大三角的一角。星表编号 HR 7924，星表 V 波段参考星等为 1.25。",
+    "source": "https://iauarchive.eso.org/public/themes/naming_stars/"
+  },
+  {
+    "id": 19,
+    "name": "Mimosa",
+    "cn": "十字架三",
+    "constellation": "南十字座",
+    "fortune": "适合稳步推进，把注意力放在眼前。在行动前想清楚最重要的理由。",
+    "challenge": "画一个小星球",
+    "fact": "十字架三（Mimosa）位于南十字座。星表编号 HR 4853，星表 V 波段参考星等为 1.25。",
+    "source": "https://iauarchive.eso.org/public/themes/naming_stars/"
+  },
+  {
+    "id": 20,
+    "name": "Regulus",
+    "cn": "轩辕十四",
+    "constellation": "狮子座",
+    "fortune": "适合稳步推进，把注意力放在眼前。结束时给自己一个满意的收尾。",
+    "challenge": "认识一个新单词",
+    "fact": "轩辕十四（Regulus）位于狮子座。星表编号 HR 3982，星表 V 波段参考星等为 1.36。",
+    "source": "https://iauarchive.eso.org/public/themes/naming_stars/"
+  },
+  {
+    "id": 21,
+    "name": "Adhara",
+    "cn": "弧矢七",
+    "constellation": "大犬座",
+    "fortune": "适合交流想法，给好奇心留一点空间。给自己一个清楚的起点。",
+    "challenge": "写五行日记",
+    "fact": "弧矢七（Adhara）位于大犬座。星表编号 HR 2618，星表 V 波段参考星等为 1.50。",
+    "source": "https://iauarchive.eso.org/public/themes/naming_stars/"
+  },
+  {
+    "id": 22,
+    "name": "Castor",
+    "cn": "北河二",
+    "constellation": "双子座",
+    "fortune": "适合交流想法，给好奇心留一点空间。不妨把目标缩小到可执行的范围。",
+    "challenge": "整理浏览器书签",
+    "fact": "北河二（Castor）位于双子座。星表编号 HR 2891，星表 V 波段参考星等为 1.98。",
+    "source": "https://iauarchive.eso.org/public/themes/naming_stars/"
+  },
+  {
+    "id": 23,
+    "name": "Shaula",
+    "cn": "尾宿八",
+    "constellation": "天蝎座",
+    "fortune": "适合交流想法，给好奇心留一点空间。遇到卡点时，换个角度看看。",
+    "challenge": "阅读一篇科普短文",
+    "fact": "尾宿八（Shaula）位于天蝎座。星表编号 HR 6527，星表 V 波段参考星等为 1.62。",
+    "source": "https://iauarchive.eso.org/public/themes/naming_stars/"
+  },
+  {
+    "id": 24,
+    "name": "Gacrux",
+    "cn": "十字架一",
+    "constellation": "南十字座",
+    "fortune": "适合交流想法，给好奇心留一点空间。为突发的灵感保留几分钟。",
+    "challenge": "画一张思维导图",
+    "fact": "十字架一（Gacrux）位于南十字座。星表编号 HR 4763，星表 V 波段参考星等为 1.59。",
+    "source": "https://iauarchive.eso.org/public/themes/naming_stars/"
+  },
+  {
+    "id": 25,
+    "name": "Bellatrix",
+    "cn": "参宿五",
+    "constellation": "猎户座",
+    "fortune": "适合交流想法，给好奇心留一点空间。从一件容易完成的事找回节奏。",
+    "challenge": "给自己安排一段休息时间",
+    "fact": "参宿五（Bellatrix）位于猎户座。星表编号 HR 1790，星表 V 波段参考星等为 1.64。",
+    "source": "https://iauarchive.eso.org/public/themes/naming_stars/"
+  },
+  {
+    "id": 26,
+    "name": "Elnath",
+    "cn": "五车五",
+    "constellation": "金牛座",
+    "fortune": "适合交流想法，给好奇心留一点空间。今天也可以为自己留一点余地。",
+    "challenge": "尝试一种新的早餐搭配",
+    "fact": "五车五（Elnath）位于金牛座。星表编号 HR 1791，星表 V 波段参考星等为 1.65。",
+    "source": "https://iauarchive.eso.org/public/themes/naming_stars/"
+  },
+  {
+    "id": 27,
+    "name": "Miaplacidus",
+    "cn": "",
+    "constellation": "船底座",
+    "fortune": "适合交流想法，给好奇心留一点空间。用温和的语气与人交流。",
+    "challenge": "把一个想法写成草稿",
+    "fact": "Miaplacidus（Miaplacidus）位于船底座。星表编号 HR 3685，星表 V 波段参考星等为 1.67。",
+    "source": "https://iauarchive.eso.org/public/themes/naming_stars/"
+  },
+  {
+    "id": 28,
+    "name": "Alnilam",
+    "cn": "参宿二",
+    "constellation": "猎户座",
+    "fortune": "适合交流想法，给好奇心留一点空间。记住过程中的一个小收获。",
+    "challenge": "复盘最近一次学习",
+    "fact": "参宿二（Alnilam）位于猎户座。猎户座腰带的中间一颗星。星表编号 HR 1903，星表 V 波段参考星等为 1.69。",
+    "source": "https://iauarchive.eso.org/public/themes/naming_stars/"
+  },
+  {
+    "id": 29,
+    "name": "Alnair",
+    "cn": "",
+    "constellation": "天鹤座",
+    "fortune": "适合交流想法，给好奇心留一点空间。在行动前想清楚最重要的理由。",
+    "challenge": "找到一个值得收藏的网站",
+    "fact": "Alnair（Alnair）位于天鹤座。星表编号 HR 8425，星表 V 波段参考星等为 1.73。",
+    "source": "https://iauarchive.eso.org/public/themes/naming_stars/"
+  },
+  {
+    "id": 30,
+    "name": "Alnitak",
+    "cn": "参宿一",
+    "constellation": "猎户座",
+    "fortune": "适合交流想法，给好奇心留一点空间。结束时给自己一个满意的收尾。",
+    "challenge": "关掉通知专注十五分钟",
+    "fact": "参宿一（Alnitak）位于猎户座。猎户座腰带三颗恒星之一。星表编号 HR 1948，星表 V 波段参考星等为 1.74。",
+    "source": "https://iauarchive.eso.org/public/themes/naming_stars/"
+  },
+  {
+    "id": 31,
+    "name": "Alioth",
+    "cn": "玉衡",
+    "constellation": "大熊座",
+    "fortune": "适合整理旧事，为新灵感腾出位置。给自己一个清楚的起点。",
+    "challenge": "查找一颗恒星在星图上的位置",
+    "fact": "玉衡（Alioth）位于大熊座。星表编号 HR 4905，星表 V 波段参考星等为 1.76。",
+    "source": "https://iauarchive.eso.org/public/themes/naming_stars/"
+  },
+  {
+    "id": 32,
+    "name": "Dubhe",
+    "cn": "天枢",
+    "constellation": "大熊座",
+    "fortune": "适合整理旧事，为新灵感腾出位置。不妨把目标缩小到可执行的范围。",
+    "challenge": "把待办清单缩减到三项",
+    "fact": "天枢（Dubhe）位于大熊座。北斗七星中的天枢，与天璇连线可用于寻找北极星。星表编号 HR 4301，星表 V 波段参考星等为 1.81。",
+    "source": "https://iauarchive.eso.org/public/themes/naming_stars/"
+  },
+  {
+    "id": 33,
+    "name": "Mirfak",
+    "cn": "",
+    "constellation": "英仙座",
+    "fortune": "适合整理旧事，为新灵感腾出位置。遇到卡点时，换个角度看看。",
+    "challenge": "清理一张桌面截图",
+    "fact": "Mirfak（Mirfak）位于英仙座。星表编号 HR 1017，星表 V 波段参考星等为 1.79。",
+    "source": "https://iauarchive.eso.org/public/themes/naming_stars/"
+  },
+  {
+    "id": 34,
+    "name": "Wezen",
+    "cn": "",
+    "constellation": "大犬座",
+    "fortune": "适合整理旧事，为新灵感腾出位置。为突发的灵感保留几分钟。",
+    "challenge": "观察月亮的形状或查今日月相",
+    "fact": "Wezen（Wezen）位于大犬座。星表编号 HR 2693，星表 V 波段参考星等为 1.84。",
+    "source": "https://iauarchive.eso.org/public/themes/naming_stars/"
+  },
+  {
+    "id": 35,
+    "name": "Alkaid",
+    "cn": "摇光",
+    "constellation": "大熊座",
+    "fortune": "适合整理旧事，为新灵感腾出位置。从一件容易完成的事找回节奏。",
+    "challenge": "记录一个让你开心的瞬间",
+    "fact": "摇光（Alkaid）位于大熊座。星表编号 HR 5191，星表 V 波段参考星等为 1.85。",
+    "source": "https://iauarchive.eso.org/public/themes/naming_stars/"
+  },
+  {
+    "id": 36,
+    "name": "Sargas",
+    "cn": "",
+    "constellation": "天蝎座",
+    "fortune": "适合整理旧事，为新灵感腾出位置。今天也可以为自己留一点余地。",
+    "challenge": "给一件旧物找到新用途",
+    "fact": "Sargas（Sargas）位于天蝎座。星表编号 HR 6553，星表 V 波段参考星等为 1.86。",
+    "source": "https://iauarchive.eso.org/public/themes/naming_stars/"
+  },
+  {
+    "id": 37,
+    "name": "Kaus Australis",
+    "cn": "",
+    "constellation": "人马座",
+    "fortune": "适合整理旧事，为新灵感腾出位置。用温和的语气与人交流。",
+    "challenge": "学会一个简单的终端命令",
+    "fact": "Kaus Australis（Kaus Australis）位于人马座。星表编号 HR 6879，星表 V 波段参考星等为 1.79。",
+    "source": "https://iauarchive.eso.org/public/themes/naming_stars/"
+  },
+  {
+    "id": 38,
+    "name": "Avior",
+    "cn": "",
+    "constellation": "船底座",
+    "fortune": "适合整理旧事，为新灵感腾出位置。记住过程中的一个小收获。",
+    "challenge": "读一段英文文章",
+    "fact": "Avior（Avior）位于船底座。星表编号 HR 3307，星表 V 波段参考星等为 1.86。",
+    "source": "https://iauarchive.eso.org/public/themes/naming_stars/"
+  },
+  {
+    "id": 39,
+    "name": "Menkalinan",
+    "cn": "",
+    "constellation": "御夫座",
+    "fortune": "适合整理旧事，为新灵感腾出位置。在行动前想清楚最重要的理由。",
+    "challenge": "写一个小函数",
+    "fact": "Menkalinan（Menkalinan）位于御夫座。星表编号 HR 2088，星表 V 波段参考星等为 1.90。",
+    "source": "https://iauarchive.eso.org/public/themes/naming_stars/"
+  },
+  {
+    "id": 40,
+    "name": "Atria",
+    "cn": "",
+    "constellation": "南三角座",
+    "fortune": "适合整理旧事，为新灵感腾出位置。结束时给自己一个满意的收尾。",
+    "challenge": "整理一页笔记",
+    "fact": "Atria（Atria）位于南三角座。星表编号 HR 6217，星表 V 波段参考星等为 1.91。",
+    "source": "https://iauarchive.eso.org/public/themes/naming_stars/"
+  },
+  {
+    "id": 41,
+    "name": "Alhena",
+    "cn": "",
+    "constellation": "双子座",
+    "fortune": "适合尝试新方法，允许自己慢慢摸索。给自己一个清楚的起点。",
+    "challenge": "为一个项目画出下一步流程",
+    "fact": "Alhena（Alhena）位于双子座。星表编号 HR 2421，星表 V 波段参考星等为 1.93。",
+    "source": "https://iauarchive.eso.org/public/themes/naming_stars/"
+  },
+  {
+    "id": 42,
+    "name": "Peacock",
+    "cn": "",
+    "constellation": "孔雀座",
+    "fortune": "适合尝试新方法，允许自己慢慢摸索。不妨把目标缩小到可执行的范围。",
+    "challenge": "向朋友分享一条有趣知识",
+    "fact": "Peacock（Peacock）位于孔雀座。星表编号 HR 7790，星表 V 波段参考星等为 1.94。",
+    "source": "https://iauarchive.eso.org/public/themes/naming_stars/"
+  },
+  {
+    "id": 43,
+    "name": "Mirzam",
+    "cn": "",
+    "constellation": "大犬座",
+    "fortune": "适合尝试新方法，允许自己慢慢摸索。遇到卡点时，换个角度看看。",
+    "challenge": "在安静处坐五分钟",
+    "fact": "Mirzam（Mirzam）位于大犬座。星表编号 HR 2294，星表 V 波段参考星等为 1.98。",
+    "source": "https://iauarchive.eso.org/public/themes/naming_stars/"
+  },
+  {
+    "id": 44,
+    "name": "Alphard",
+    "cn": "星宿一",
+    "constellation": "长蛇座",
+    "fortune": "适合尝试新方法，允许自己慢慢摸索。为突发的灵感保留几分钟。",
+    "challenge": "把一个问题换一种说法",
+    "fact": "星宿一（Alphard）位于长蛇座。星表编号 HR 3748，星表 V 波段参考星等为 1.99。",
+    "source": "https://iauarchive.eso.org/public/themes/naming_stars/"
+  },
+  {
+    "id": 45,
+    "name": "Hamal",
+    "cn": "",
+    "constellation": "白羊座",
+    "fortune": "适合尝试新方法，允许自己慢慢摸索。从一件容易完成的事找回节奏。",
+    "challenge": "给自己的网页添加一句介绍",
+    "fact": "Hamal（Hamal）位于白羊座。星表编号 HR 617，星表 V 波段参考星等为 2.01。",
+    "source": "https://iauarchive.eso.org/public/themes/naming_stars/"
+  },
+  {
+    "id": 46,
+    "name": "Polaris",
+    "cn": "北极星",
+    "constellation": "小熊座",
+    "fortune": "适合尝试新方法，允许自己慢慢摸索。今天也可以为自己留一点余地。",
+    "challenge": "整理三张喜欢的照片",
+    "fact": "北极星（Polaris）位于小熊座。北极星靠近北天极，可用于判断北方。星表编号 HR 424，星表 V 波段参考星等为 1.97。",
+    "source": "https://iauarchive.eso.org/public/themes/naming_stars/"
+  },
+  {
+    "id": 47,
+    "name": "Diphda",
+    "cn": "",
+    "constellation": "鲸鱼座",
+    "fortune": "适合尝试新方法，允许自己慢慢摸索。用温和的语气与人交流。",
+    "challenge": "做一次简短的代码复查",
+    "fact": "Diphda（Diphda）位于鲸鱼座。星表编号 HR 188，星表 V 波段参考星等为 2.04。",
+    "source": "https://iauarchive.eso.org/public/themes/naming_stars/"
+  },
+  {
+    "id": 48,
+    "name": "Nunki",
+    "cn": "",
+    "constellation": "人马座",
+    "fortune": "适合尝试新方法，允许自己慢慢摸索。记住过程中的一个小收获。",
+    "challenge": "学习一个星座的名称",
+    "fact": "Nunki（Nunki）位于人马座。星表编号 HR 7121，星表 V 波段参考星等为 2.05。",
+    "source": "https://iauarchive.eso.org/public/themes/naming_stars/"
+  },
+  {
+    "id": 49,
+    "name": "Alpheratz",
+    "cn": "",
+    "constellation": "仙女座",
+    "fortune": "适合尝试新方法，允许自己慢慢摸索。在行动前想清楚最重要的理由。",
+    "challenge": "用三句话总结今天",
+    "fact": "Alpheratz（Alpheratz）位于仙女座。星表编号 HR 15，星表 V 波段参考星等为 2.07。",
+    "source": "https://iauarchive.eso.org/public/themes/naming_stars/"
+  },
+  {
+    "id": 50,
+    "name": "Mirach",
+    "cn": "",
+    "constellation": "仙女座",
+    "fortune": "适合尝试新方法，允许自己慢慢摸索。结束时给自己一个满意的收尾。",
+    "challenge": "提前准备明天的一件事",
+    "fact": "Mirach（Mirach）位于仙女座。星表编号 HR 337，星表 V 波段参考星等为 2.07。",
+    "source": "https://iauarchive.eso.org/public/themes/naming_stars/"
+  },
+  {
+    "id": 51,
+    "name": "Rasalhague",
+    "cn": "",
+    "constellation": "蛇夫座",
+    "fortune": "适合放慢节奏，给自己留一段安静时间。给自己一个清楚的起点。",
+    "challenge": "列出三个感兴趣的研究问题",
+    "fact": "Rasalhague（Rasalhague）位于蛇夫座。星表编号 HR 6556，星表 V 波段参考星等为 2.08。",
+    "source": "https://iauarchive.eso.org/public/themes/naming_stars/"
+  },
+  {
+    "id": 52,
+    "name": "Kochab",
+    "cn": "",
+    "constellation": "小熊座",
+    "fortune": "适合放慢节奏，给自己留一段安静时间。不妨把目标缩小到可执行的范围。",
+    "challenge": "尝试一种新的学习方法",
+    "fact": "Kochab（Kochab）位于小熊座。星表编号 HR 5563，星表 V 波段参考星等为 2.07。",
+    "source": "https://iauarchive.eso.org/public/themes/naming_stars/"
+  },
+  {
+    "id": 53,
+    "name": "Saiph",
+    "cn": "参宿六",
+    "constellation": "猎户座",
+    "fortune": "适合放慢节奏，给自己留一段安静时间。遇到卡点时，换个角度看看。",
+    "challenge": "清理下载目录的三个无用文件",
+    "fact": "参宿六（Saiph）位于猎户座。星表编号 HR 2004，星表 V 波段参考星等为 2.07。",
+    "source": "https://iauarchive.eso.org/public/themes/naming_stars/"
+  },
+  {
+    "id": 54,
+    "name": "Algol",
+    "cn": "大陵五",
+    "constellation": "英仙座",
+    "fortune": "适合放慢节奏，给自己留一段安静时间。为突发的灵感保留几分钟。",
+    "challenge": "阅读一段诗歌",
+    "fact": "大陵五（Algol）位于英仙座。著名的食双星，亮度会周期性降低。星表编号 HR 936，星表 V 波段参考星等为 2.09。星表数值为参考值，实际亮度会变化。",
+    "source": "https://iauarchive.eso.org/public/themes/naming_stars/"
+  },
+  {
+    "id": 55,
+    "name": "Denebola",
+    "cn": "",
+    "constellation": "狮子座",
+    "fortune": "适合放慢节奏，给自己留一段安静时间。从一件容易完成的事找回节奏。",
+    "challenge": "用十分钟了解一项新技术",
+    "fact": "Denebola（Denebola）位于狮子座。星表编号 HR 4534，星表 V 波段参考星等为 2.14。",
+    "source": "https://iauarchive.eso.org/public/themes/naming_stars/"
+  },
+  {
+    "id": 56,
+    "name": "Muhlifain",
+    "cn": "",
+    "constellation": "半人马座",
+    "fortune": "适合放慢节奏，给自己留一段安静时间。今天也可以为自己留一点余地。",
+    "challenge": "记录一个灵感",
+    "fact": "Muhlifain（Muhlifain）位于半人马座。Muhlifain 是传统星名，对应半人马座 γ 星系统；星表编号 HR 4819，视星等约 2.17。",
+    "source": "https://www.star-facts.com/gamma-centauri/"
+  },
+  {
+    "id": 57,
+    "name": "Sadr",
+    "cn": "",
+    "constellation": "天鹅座",
+    "fortune": "适合放慢节奏，给自己留一段安静时间。用温和的语气与人交流。",
+    "challenge": "给一个长期目标写出第一步",
+    "fact": "Sadr（Sadr）位于天鹅座。星表编号 HR 7796，星表 V 波段参考星等为 2.23。",
+    "source": "https://iauarchive.eso.org/public/themes/naming_stars/"
+  },
+  {
+    "id": 58,
+    "name": "Mintaka",
+    "cn": "参宿三",
+    "constellation": "猎户座",
+    "fortune": "适合放慢节奏，给自己留一段安静时间。记住过程中的一个小收获。",
+    "challenge": "练习一次深呼吸放松",
+    "fact": "参宿三（Mintaka）位于猎户座。猎户座腰带三颗恒星之一，其赤纬接近天球赤道。星表编号 HR 1852，星表 V 波段参考星等为 2.25。",
+    "source": "https://iauarchive.eso.org/public/themes/naming_stars/"
+  },
+  {
+    "id": 59,
+    "name": "Schedar",
+    "cn": "",
+    "constellation": "仙后座",
+    "fortune": "适合放慢节奏，给自己留一段安静时间。在行动前想清楚最重要的理由。",
+    "challenge": "把一段复杂文字改得更清楚",
+    "fact": "Schedar（Schedar）位于仙后座。星表编号 HR 168，星表 V 波段参考星等为 2.24。",
+    "source": "https://iauarchive.eso.org/public/themes/naming_stars/"
+  },
+  {
+    "id": 60,
+    "name": "Eltanin",
+    "cn": "",
+    "constellation": "天龙座",
+    "fortune": "适合放慢节奏，给自己留一段安静时间。结束时给自己一个满意的收尾。",
+    "challenge": "给自己的项目写一条更新日志",
+    "fact": "Eltanin（Eltanin）位于天龙座。星表编号 HR 6705，星表 V 波段参考星等为 2.24。",
+    "source": "https://iauarchive.eso.org/public/themes/naming_stars/"
+  },
+  {
+    "id": 61,
+    "name": "Merak",
+    "cn": "天璇",
+    "constellation": "大熊座",
+    "fortune": "适合回顾进展，留意已经完成的小事。给自己一个清楚的起点。",
+    "challenge": "看一张真实天文照片并查出处",
+    "fact": "天璇（Merak）位于大熊座。北斗七星中的天璇，与天枢构成指极星。星表编号 HR 4295，星表 V 波段参考星等为 2.34。",
+    "source": "https://iauarchive.eso.org/public/themes/naming_stars/"
+  },
+  {
+    "id": 62,
+    "name": "Enif",
+    "cn": "",
+    "constellation": "飞马座",
+    "fortune": "适合回顾进展，留意已经完成的小事。不妨把目标缩小到可执行的范围。",
+    "challenge": "复习一个数学概念",
+    "fact": "Enif（Enif）位于飞马座。星表编号 HR 8308，星表 V 波段参考星等为 2.38。",
+    "source": "https://iauarchive.eso.org/public/themes/naming_stars/"
+  },
+  {
+    "id": 63,
+    "name": "Scheat",
+    "cn": "",
+    "constellation": "飞马座",
+    "fortune": "适合回顾进展，留意已经完成的小事。遇到卡点时，换个角度看看。",
+    "challenge": "整理一份参考资料",
+    "fact": "Scheat（Scheat）位于飞马座。星表编号 HR 8775，星表 V 波段参考星等为 2.44。",
+    "source": "https://iauarchive.eso.org/public/themes/naming_stars/"
+  },
+  {
+    "id": 64,
+    "name": "Sabik",
+    "cn": "",
+    "constellation": "蛇夫座",
+    "fortune": "适合回顾进展，留意已经完成的小事。为突发的灵感保留几分钟。",
+    "challenge": "尝试不看手机吃完一餐",
+    "fact": "Sabik（Sabik）位于蛇夫座。星表编号 HR 6378，星表 V 波段参考星等为 2.43。",
+    "source": "https://iauarchive.eso.org/public/themes/naming_stars/"
+  },
+  {
+    "id": 65,
+    "name": "Phecda",
+    "cn": "天玑",
+    "constellation": "大熊座",
+    "fortune": "适合回顾进展，留意已经完成的小事。从一件容易完成的事找回节奏。",
+    "challenge": "写一个感谢便签",
+    "fact": "天玑（Phecda）位于大熊座。星表编号 HR 4554，星表 V 波段参考星等为 2.41。",
+    "source": "https://iauarchive.eso.org/public/themes/naming_stars/"
+  },
+  {
+    "id": 66,
+    "name": "Aljanah",
+    "cn": "",
+    "constellation": "天鹅座",
+    "fortune": "适合回顾进展，留意已经完成的小事。今天也可以为自己留一点余地。",
+    "challenge": "做一个小型纸上设计",
+    "fact": "Aljanah（Aljanah）位于天鹅座。星表编号 HR 7949，星表 V 波段参考星等为 2.48。",
+    "source": "https://iauarchive.eso.org/public/themes/naming_stars/"
+  },
+  {
+    "id": 67,
+    "name": "Markab",
+    "cn": "",
+    "constellation": "飞马座",
+    "fortune": "适合回顾进展，留意已经完成的小事。用温和的语气与人交流。",
+    "challenge": "试着解释一个熟悉的概念",
+    "fact": "Markab（Markab）位于飞马座。星表编号 HR 8781，星表 V 波段参考星等为 2.49。",
+    "source": "https://iauarchive.eso.org/public/themes/naming_stars/"
+  },
+  {
+    "id": 68,
+    "name": "Menkar",
+    "cn": "",
+    "constellation": "鲸鱼座",
+    "fortune": "适合回顾进展，留意已经完成的小事。记住过程中的一个小收获。",
+    "challenge": "检查一个网页的手机端效果",
+    "fact": "Menkar（Menkar）位于鲸鱼座。星表编号 HR 911，星表 V 波段参考星等为 2.54。",
+    "source": "https://iauarchive.eso.org/public/themes/naming_stars/"
+  },
+  {
+    "id": 69,
+    "name": "Zosma",
+    "cn": "",
+    "constellation": "狮子座",
+    "fortune": "适合回顾进展，留意已经完成的小事。在行动前想清楚最重要的理由。",
+    "challenge": "画一条今天的时间线",
+    "fact": "Zosma（Zosma）位于狮子座。星表编号 HR 4357，星表 V 波段参考星等为 2.56。",
+    "source": "https://iauarchive.eso.org/public/themes/naming_stars/"
+  },
+  {
+    "id": 70,
+    "name": "Gienah",
+    "cn": "",
+    "constellation": "乌鸦座",
+    "fortune": "适合回顾进展，留意已经完成的小事。结束时给自己一个满意的收尾。",
+    "challenge": "把一个重复步骤自动化",
+    "fact": "Gienah（Gienah）位于乌鸦座。星表编号 HR 4662，星表 V 波段参考星等为 2.58。",
+    "source": "https://iauarchive.eso.org/public/themes/naming_stars/"
+  },
+  {
+    "id": 71,
+    "name": "Arneb",
+    "cn": "",
+    "constellation": "天兔座",
+    "fortune": "适合专注学习，让一个问题变得更清晰。给自己一个清楚的起点。",
+    "challenge": "选择一项五分钟就能完成的任务",
+    "fact": "Arneb（Arneb）位于天兔座。星表编号 HR 1865，星表 V 波段参考星等为 2.58。",
+    "source": "https://iauarchive.eso.org/public/themes/naming_stars/"
+  },
+  {
+    "id": 72,
+    "name": "Zubenelgenubi",
+    "cn": "",
+    "constellation": "天秤座",
+    "fortune": "适合专注学习，让一个问题变得更清晰。不妨把目标缩小到可执行的范围。",
+    "challenge": "写下三个想去的地方",
+    "fact": "Zubenelgenubi（Zubenelgenubi）位于天秤座。星表编号 HR 5531，星表 V 波段参考星等为 2.75。",
+    "source": "https://iauarchive.eso.org/public/themes/naming_stars/"
+  },
+  {
+    "id": 73,
+    "name": "Kornephoros",
+    "cn": "",
+    "constellation": "武仙座",
+    "fortune": "适合专注学习，让一个问题变得更清晰。遇到卡点时，换个角度看看。",
+    "challenge": "整理一个代码模板",
+    "fact": "Kornephoros（Kornephoros）位于武仙座。星表编号 HR 6148，星表 V 波段参考星等为 2.78。",
+    "source": "https://iauarchive.eso.org/public/themes/naming_stars/"
+  },
+  {
+    "id": 74,
+    "name": "Caph",
+    "cn": "",
+    "constellation": "仙后座",
+    "fortune": "适合专注学习，让一个问题变得更清晰。为突发的灵感保留几分钟。",
+    "challenge": "练习一次清晰的口头表达",
+    "fact": "Caph（Caph）位于仙后座。星表编号 HR 21，星表 V 波段参考星等为 2.28。",
+    "source": "https://iauarchive.eso.org/public/themes/naming_stars/"
+  },
+  {
+    "id": 75,
+    "name": "Unukalhai",
+    "cn": "",
+    "constellation": "巨蛇座",
+    "fortune": "适合专注学习，让一个问题变得更清晰。从一件容易完成的事找回节奏。",
+    "challenge": "给文件取一个易懂的名字",
+    "fact": "Unukalhai（Unukalhai）位于巨蛇座。星表编号 HR 5854，星表 V 波段参考星等为 2.63。",
+    "source": "https://iauarchive.eso.org/public/themes/naming_stars/"
+  },
+  {
+    "id": 76,
+    "name": "Alcyone",
+    "cn": "",
+    "constellation": "金牛座",
+    "fortune": "适合专注学习，让一个问题变得更清晰。今天也可以为自己留一点余地。",
+    "challenge": "观察日落或日出颜色",
+    "fact": "Alcyone（Alcyone）位于金牛座。昴星团成员。星表编号 HR 1165，星表 V 波段参考星等为 2.85。",
+    "source": "https://iauarchive.eso.org/public/themes/naming_stars/"
+  },
+  {
+    "id": 77,
+    "name": "Vindemiatrix",
+    "cn": "",
+    "constellation": "室女座",
+    "fortune": "适合专注学习，让一个问题变得更清晰。用温和的语气与人交流。",
+    "challenge": "读一篇不同领域的文章",
+    "fact": "Vindemiatrix（Vindemiatrix）位于室女座。星表编号 HR 4932，星表 V 波段参考星等为 2.85。",
+    "source": "https://iauarchive.eso.org/public/themes/naming_stars/"
+  },
+  {
+    "id": 78,
+    "name": "Mebsuta",
+    "cn": "",
+    "constellation": "双子座",
+    "fortune": "适合专注学习，让一个问题变得更清晰。记住过程中的一个小收获。",
+    "challenge": "把一段笔记改成问答",
+    "fact": "Mebsuta（Mebsuta）位于双子座。星表编号 HR 2473，星表 V 波段参考星等为 3.06。",
+    "source": "https://iauarchive.eso.org/public/themes/naming_stars/"
+  },
+  {
+    "id": 79,
+    "name": "Megrez",
+    "cn": "天权",
+    "constellation": "大熊座",
+    "fortune": "适合专注学习，让一个问题变得更清晰。在行动前想清楚最重要的理由。",
+    "challenge": "学习一个新的天文术语",
+    "fact": "天权（Megrez）位于大熊座。星表编号 HR 4660，星表 V 波段参考星等为 3.32。",
+    "source": "https://iauarchive.eso.org/public/themes/naming_stars/"
+  },
+  {
+    "id": 80,
+    "name": "Mizar",
+    "cn": "开阳",
+    "constellation": "大熊座",
+    "fortune": "适合专注学习，让一个问题变得更清晰。结束时给自己一个满意的收尾。",
+    "challenge": "给自己设定一个轻松的阅读目标",
+    "fact": "开阳（Mizar）位于大熊座。北斗七星中的开阳，与辅星 Alcor 在天空中靠得很近。星表编号 HR 5054，星表 V 波段参考星等为 2.23。",
+    "source": "https://iauarchive.eso.org/public/themes/naming_stars/"
+  },
+  {
+    "id": 81,
+    "name": "Albireo",
+    "cn": "",
+    "constellation": "天鹅座",
+    "fortune": "适合创作和记录，把想法留在纸上。给自己一个清楚的起点。",
+    "challenge": "用纸笔推导一道小题",
+    "fact": "Albireo（Albireo）位于天鹅座。星表编号 HR 7417，星表 V 波段参考星等为 3.05。",
+    "source": "https://iauarchive.eso.org/public/themes/naming_stars/"
+  },
+  {
+    "id": 82,
+    "name": "Alcor",
+    "cn": "辅",
+    "constellation": "大熊座",
+    "fortune": "适合创作和记录，把想法留在纸上。不妨把目标缩小到可执行的范围。",
+    "challenge": "分享一个实用工具",
+    "fact": "辅（Alcor）位于大熊座。与开阳相邻的辅星，常被用作裸眼分辨双星的例子。星表编号 HR 5062，星表 V 波段参考星等为 3.99。",
+    "source": "https://iauarchive.eso.org/public/themes/naming_stars/"
+  },
+  {
+    "id": 83,
+    "name": "Rastaban",
+    "cn": "",
+    "constellation": "天龙座",
+    "fortune": "适合创作和记录，把想法留在纸上。遇到卡点时，换个角度看看。",
+    "challenge": "整理一份学习资源列表",
+    "fact": "Rastaban（Rastaban）位于天龙座。星表编号 HR 6536，星表 V 波段参考星等为 2.79。",
+    "source": "https://iauarchive.eso.org/public/themes/naming_stars/"
+  },
+  {
+    "id": 84,
+    "name": "Thuban",
+    "cn": "",
+    "constellation": "天龙座",
+    "fortune": "适合创作和记录，把想法留在纸上。为突发的灵感保留几分钟。",
+    "challenge": "从一个错误中提炼经验",
+    "fact": "Thuban（Thuban）位于天龙座。星表编号 HR 5291，星表 V 波段参考星等为 3.67。",
+    "source": "https://iauarchive.eso.org/public/themes/naming_stars/"
+  },
+  {
+    "id": 85,
+    "name": "Rasalgethi",
+    "cn": "",
+    "constellation": "武仙座",
+    "fortune": "适合创作和记录，把想法留在纸上。从一件容易完成的事找回节奏。",
+    "challenge": "给喜欢的创作留下一条真诚评论",
+    "fact": "Rasalgethi（Rasalgethi）位于武仙座。星表编号 HR 6406，星表 V 波段参考星等为 3.37。",
+    "source": "https://iauarchive.eso.org/public/themes/naming_stars/"
+  },
+  {
+    "id": 86,
+    "name": "Mira",
+    "cn": "刍藁增二",
+    "constellation": "鲸鱼座",
+    "fortune": "适合创作和记录，把想法留在纸上。今天也可以为自己留一点余地。",
+    "challenge": "关闭一个不再需要的网页标签",
+    "fact": "刍藁增二（Mira）位于鲸鱼座。著名长周期变星，亮度变化十分明显。星表编号 HR 681，星表 V 波段参考星等为 6.47。星表数值为参考值，实际亮度会变化。",
+    "source": "https://iauarchive.eso.org/public/themes/naming_stars/"
+  },
+  {
+    "id": 87,
+    "name": "Alfirk",
+    "cn": "",
+    "constellation": "仙王座",
+    "fortune": "适合创作和记录，把想法留在纸上。用温和的语气与人交流。",
+    "challenge": "设计一个像素图标",
+    "fact": "Alfirk（Alfirk）位于仙王座。星表编号 HR 8238，星表 V 波段参考星等为 3.23。",
+    "source": "https://iauarchive.eso.org/public/themes/naming_stars/"
+  },
+  {
+    "id": 88,
+    "name": "Alderamin",
+    "cn": "",
+    "constellation": "仙王座",
+    "fortune": "适合创作和记录，把想法留在纸上。记住过程中的一个小收获。",
+    "challenge": "查找一个公开数据集",
+    "fact": "Alderamin（Alderamin）位于仙王座。星表编号 HR 8162，星表 V 波段参考星等为 2.45。",
+    "source": "https://iauarchive.eso.org/public/themes/naming_stars/"
+  },
+  {
+    "id": 89,
+    "name": "Errai",
+    "cn": "",
+    "constellation": "仙王座",
+    "fortune": "适合创作和记录，把想法留在纸上。在行动前想清楚最重要的理由。",
+    "challenge": "做一次小范围的桌面整理",
+    "fact": "Errai（Errai）位于仙王座。星表编号 HR 8974，星表 V 波段参考星等为 3.21。",
+    "source": "https://iauarchive.eso.org/public/themes/naming_stars/"
+  },
+  {
+    "id": 90,
+    "name": "Sheliak",
+    "cn": "",
+    "constellation": "天琴座",
+    "fortune": "适合创作和记录，把想法留在纸上。结束时给自己一个满意的收尾。",
+    "challenge": "回顾一个已经完成的目标",
+    "fact": "Sheliak（Sheliak）位于天琴座。星表编号 HR 7106，星表 V 波段参考星等为 3.52。",
+    "source": "https://iauarchive.eso.org/public/themes/naming_stars/"
+  },
+  {
+    "id": 91,
+    "name": "Sulafat",
+    "cn": "",
+    "constellation": "天琴座",
+    "fortune": "适合收尾与规划，带着轻松心情出发。给自己一个清楚的起点。",
+    "challenge": "尝试用另一种方式解决旧问题",
+    "fact": "Sulafat（Sulafat）位于天琴座。星表编号 HR 7178，星表 V 波段参考星等为 3.25。",
+    "source": "https://iauarchive.eso.org/public/themes/naming_stars/"
+  },
+  {
+    "id": 92,
+    "name": "Atlas",
+    "cn": "",
+    "constellation": "金牛座",
+    "fortune": "适合收尾与规划，带着轻松心情出发。不妨把目标缩小到可执行的范围。",
+    "challenge": "选择一个想继续探索的主题",
+    "fact": "Atlas（Atlas）位于金牛座。昴星团成员。星表编号 HR 1178，星表 V 波段参考星等为 3.62。",
+    "source": "https://iauarchive.eso.org/public/themes/naming_stars/"
+  },
+  {
+    "id": 93,
+    "name": "Merope",
+    "cn": "",
+    "constellation": "金牛座",
+    "fortune": "适合收尾与规划，带着轻松心情出发。遇到卡点时，换个角度看看。",
+    "challenge": "为明天留出十五分钟自由时间",
+    "fact": "Merope（Merope）位于金牛座。昴星团成员。星表编号 HR 1156，星表 V 波段参考星等为 4.14。",
+    "source": "https://iauarchive.eso.org/public/themes/naming_stars/"
+  },
+  {
+    "id": 94,
+    "name": "Maia",
+    "cn": "",
+    "constellation": "金牛座",
+    "fortune": "适合收尾与规划，带着轻松心情出发。为突发的灵感保留几分钟。",
+    "challenge": "给自己的笔记增加一个索引",
+    "fact": "Maia（Maia）位于金牛座。昴星团成员。星表编号 HR 1149，星表 V 波段参考星等为 3.87。",
+    "source": "https://iauarchive.eso.org/public/themes/naming_stars/"
+  },
+  {
+    "id": 95,
+    "name": "Electra",
+    "cn": "",
+    "constellation": "金牛座",
+    "fortune": "适合收尾与规划，带着轻松心情出发。从一件容易完成的事找回节奏。",
+    "challenge": "读一段项目文档",
+    "fact": "Electra（Electra）位于金牛座。昴星团成员。星表编号 HR 1142，星表 V 波段参考星等为 3.72。",
+    "source": "https://iauarchive.eso.org/public/themes/naming_stars/"
+  },
+  {
+    "id": 96,
+    "name": "Taygeta",
+    "cn": "",
+    "constellation": "金牛座",
+    "fortune": "适合收尾与规划，带着轻松心情出发。今天也可以为自己留一点余地。",
+    "challenge": "整理一个学习疑问",
+    "fact": "Taygeta（Taygeta）位于金牛座。昴星团成员。星表编号 HR 1145，星表 V 波段参考星等为 4.30。",
+    "source": "https://iauarchive.eso.org/public/themes/naming_stars/"
+  },
+  {
+    "id": 97,
+    "name": "Pleione",
+    "cn": "",
+    "constellation": "金牛座",
+    "fortune": "适合收尾与规划，带着轻松心情出发。用温和的语气与人交流。",
+    "challenge": "记录今天的一次新发现",
+    "fact": "Pleione（Pleione）位于金牛座。昴星团成员。星表编号 HR 1180，星表 V 波段参考星等为 5.05。",
+    "source": "https://iauarchive.eso.org/public/themes/naming_stars/"
+  },
+  {
+    "id": 98,
+    "name": "Proxima Centauri",
+    "cn": "比邻星",
+    "constellation": "半人马座",
+    "fortune": "适合收尾与规划，带着轻松心情出发。记住过程中的一个小收获。",
+    "challenge": "认识一颗不熟悉的恒星",
+    "fact": "比邻星（Proxima Centauri）位于半人马座。比邻星是太阳之外距离太阳最近的已知恒星。星表编号 GJ 551，星表 V 波段参考星等为 11.01。",
+    "source": "https://iauarchive.eso.org/public/themes/naming_stars/"
+  },
+  {
+    "id": 99,
+    "name": "Rigil Kentaurus",
+    "cn": "",
+    "constellation": "半人马座",
+    "fortune": "适合收尾与规划，带着轻松心情出发。在行动前想清楚最重要的理由。",
+    "challenge": "把一个复杂目标写成一句话",
+    "fact": "Rigil Kentaurus（Rigil Kentaurus）位于半人马座。半人马座 α 星系统的 A 星。星表编号 HR 5459，星表 V 波段参考星等为 -0.01。",
+    "source": "https://iauarchive.eso.org/public/themes/naming_stars/"
+  },
+  {
+    "id": 100,
+    "name": "Toliman",
+    "cn": "",
+    "constellation": "半人马座",
+    "fortune": "适合收尾与规划，带着轻松心情出发。结束时给自己一个满意的收尾。",
+    "challenge": "给今天的自己写一句鼓励",
+    "fact": "Toliman（Toliman）位于半人马座。半人马座 α 星系统的 B 星。星表编号 HR 5460，星表 V 波段参考星等为 1.35。",
+    "source": "https://iauarchive.eso.org/public/themes/naming_stars/"
+  }
+]

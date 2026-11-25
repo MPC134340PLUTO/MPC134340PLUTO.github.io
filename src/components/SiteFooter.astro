@@ -1,0 +1,60 @@
+---
+const year = new Date().getFullYear();
+---
+
+<footer class="site-footer">
+  <div class="footer-brand">
+    <a href="/" class="footer-logo"><span>✦</span><strong>像素宇宙</strong></a>
+    <p>探索算法、科研与宇宙灵感 / A LITTLE CORNER OF THE COSMOS.</p>
+  </div>
+
+  <nav class="footer-links" aria-label="页脚导航">
+    <a href="/">首页 <small>HOME</small></a>
+    <a href="/galaxy/">星系 <small>GALAXY</small></a>
+    <a href="/archive/">知识档案 <small>ARCHIVE</small></a>
+    <a href="/explore/">全站探索 <small>EXPLORE</small></a>
+    <a href="/hangar/">星际机库 <small>HANGAR</small></a>
+    <a href="/hangar/voyage/">航行训练 <small>VOYAGE</small></a>
+    <a href="/memories/collection/">影像图鉴 <small>COLLECTION</small></a>
+    <a href="/observatory/">天文观测 <small>OBSERVATORY</small></a>
+    <a href="/radio/">宇宙电台 <small>RADIO</small></a>
+    <a href="/oracle/">星辰来签 <small>ORACLE</small></a>
+    <a href="/friends/">星际友邻 <small>FRIENDS</small></a>
+  </nav>
+
+  <div class="footer-info">
+    <span>© {year} 像素宇宙 / PIXEL UNIVERSE</span>
+    <span>保持好奇，继续探索。 / KEEP EXPLORING.</span>
+  </div>
+  <p class="rights-note">本站原创内容保留权利；第三方素材版权归原权利人，相关来源及许可见素材说明。如有权利异议，请通过<a href="/radio/">宇宙电台</a>联系站主，核实后处理。</p>
+</footer>
+
+<style>
+  .site-footer {
+    min-height: 135px;
+    padding: 28px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 25px;
+    background: #080f20;
+    border-top: 1px solid #344967;
+  }
+  .rights-note{flex-basis:100%;margin:0;padding-top:16px;border-top:1px solid #344967;color:#9aaac0;font-size:13px;line-height:1.8;}.rights-note a{color:#83ced2;text-decoration:underline;}
+  .footer-logo { display:flex; align-items:center; gap:9px; color:#e6eaf4; text-decoration:none; }
+  .footer-logo span { color:#a18bdc; font-size:23px; }
+  .footer-logo strong { font-size:15px; letter-spacing:2px; }
+  .footer-brand p { margin:9px 0 0; color:#8291aa; font:9px/1.8 monospace; letter-spacing:.5px; }
+  .footer-links { display:flex; flex-wrap:wrap; gap:18px; }
+  .footer-links a { display:flex; flex-direction:column; gap:4px; color:#d7deed; font-size:14px; transition:color .2s; }
+  .footer-links a small { color:#83ced2; font:14px var(--font-pixel-en,monospace); letter-spacing:1px; }
+  .footer-links a:hover { color:#83ced2; }
+  .footer-info { display:flex; flex-direction:column; gap:8px; text-align:right; }
+  .footer-info span { color:#9aaac0; font:9px monospace; letter-spacing:.5px; }
+  @media(max-width:650px) {
+    .site-footer { flex-direction:column; align-items:flex-start; }
+    .footer-info { text-align:left; }
+    .footer-links { gap:14px; }
+  }
+</style>

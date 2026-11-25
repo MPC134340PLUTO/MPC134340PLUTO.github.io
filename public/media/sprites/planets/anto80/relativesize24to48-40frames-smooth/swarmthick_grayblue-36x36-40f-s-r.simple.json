@@ -1,0 +1,13 @@
+{
+  "image": "swarmthick_grayblue-36x36-40f-s-r.png",
+  "frame_width": 36,
+  "frame_height": 36,
+  "pivot_x": 18,
+  "pivot_y": 18,
+  "columns": 20,
+  "rows": 2,
+  "frame_count": 40,
+  "frame_delay": 2,
+  "fps": 30,
+  "order": "left-to-right, top-to-bottom"
+}

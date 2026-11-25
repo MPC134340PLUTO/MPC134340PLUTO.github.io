@@ -1,0 +1,142 @@
+---
+import SiteLayout from '../../layouts/SiteLayout.astro';
+import PageIntro from '../../components/PageIntro.astro';
+import ImageViewer from '../../components/ImageViewer.astro';
+
+const targets = [
+  { title: '月球与行星', en: 'MOON & PLANETS', src: '/media/images/planets/solar-system-static/moon-rotation.png', description: '从近地卫星到太阳系行星，整理天体图像与基础资料。' },
+  { title: '星云与星系', en: 'NEBULAE & GALAXIES', src: '/media/images/galaxies/galaxy4.png', description: '观察星系结构、星云色彩与遥远天体的视觉特征。' },
+  { title: '深空场景', en: 'DEEP SPACE', src: '/media/images/backgrounds/scenes/Scene-2.jpg', description: '收藏以星空为主题的场景插画。' },
+];
+
+const fields = [
+  { title: '暗夜星云', en: 'DARK NEBULA', src: '/media/images/backgrounds/nebulae/Space002.png' },
+  { title: '青紫星云', en: 'CYAN NEBULA', src: '/media/images/backgrounds/nebulae/Space005.png' },
+  { title: '旋臂星系', en: 'SPIRAL GALAXY', src: '/media/images/galaxies/galaxy3.png' },
+];
+---
+
+<SiteLayout
+  title="深空观测站 | Observatory"
+  description="以星云、星系与行星图像建立个人深空观测资料库。"
+>
+  <section class="page-container observatory-page">
+    <PageIntro
+      eyebrow="06 / DEEP SPACE OBSERVATION"
+      title="深空观测站"
+      description="抬头仰望星空，从近地天体到遥远星系，逐步建立自己的宇宙观察与影像档案。"
+    />
+
+    <section class="observatory-hero">
+      <img class="observatory-backdrop" src="/media/images/backgrounds/scenes/Scene-2.jpg" alt="行星与明亮恒星构成的深空景观" />
+      <div class="observatory-shade"></div>
+      <div class="observatory-copy">
+        <span class="section-label">DEEP SPACE EXPLORATION</span>
+        <h2>把目光投向<br /><em>星空的边界。</em></h2>
+        <p>从月球、行星到星云和星系，收藏宇宙影像，了解遥远天体。</p>
+      </div>
+    </section>
+
+    <section class="featured-observation" aria-labelledby="featured-title">
+      <a class="feature-image" href="/media/images/observatory/red-cyan-nebula.jpg" data-gallery-item="红蓝星云影像" aria-label="放大查看红蓝星云影像">
+        <img src="/media/images/observatory/red-cyan-nebula.jpg" width="1116" height="1410" alt="星空中红色与蓝色发光的云状结构" loading="lazy" />
+      </a>
+      <div class="feature-copy"><span class="section-label">FEATURED IMAGE</span><h2 id="featured-title">红蓝星云影像</h2><p>红色丝状结构与蓝色光晕交织在星空中。竖幅构图保留了完整的视觉层次。</p><p class="feature-credit">来源与天体名称待核实 · 仅供本地预览，公开发布前需核验授权。</p><p>点击影像可以查看大图。</p></div>
+    </section>
+    <section class="target-section">
+      <div class="section-heading">
+        <div><span class="section-label">01 / OBSERVATION TARGETS</span><h2>天体主题</h2></div>
+        
+      </div>
+      <div class="target-list">
+        {targets.map((item, index) => (
+          <article class="target-row">
+            <span class="target-index">0{index + 1}</span>
+            <img src={item.src} alt={item.title} loading="lazy" />
+            <div><h3>{item.title}</h3><small>{item.en}</small><p>{item.description}</p></div>
+          </article>
+        ))}
+      </div>
+    </section>
+
+    <section class="field-section">
+      <div class="section-heading">
+        <div><span class="section-label">02 / DEEP FIELD IMAGES</span><h2>深空影像</h2></div>
+        
+      </div>
+      <div class="field-gallery">
+        {fields.map((field, index) => (
+          <figure>
+            <a class="field-image-link" href={field.src} data-gallery-item={field.title} aria-label={`放大查看：${field.title}`}><img src={field.src} alt={field.title} loading="lazy" /></a>
+            <figcaption><span>0{index + 1}</span><div><strong>{field.title}</strong><small>{field.en}</small></div></figcaption>
+          </figure>
+        ))}
+      </div>
+    </section>
+
+    <section class="observation-log">
+      <div>
+        <span class="section-label">OBSERVATION LOG / PERSONAL RESEARCH</span>
+        <h2>观测记录与研究笔记</h2>
+        <p>这里收录天文资料与艺术示意图，尚未发布个人实测观测记录。</p>
+      </div>
+    </section>
+    <ImageViewer />
+  </section>
+</SiteLayout>
+
+<style>
+  .observatory-page { position:relative; }
+  .observatory-page::before { content:""; position:absolute; z-index:-1; inset:0; pointer-events:none; opacity:.12; background:url('/media/images/backgrounds/starfields/EmptyStarfield.jpg') center top/680px auto repeat; }
+  .section-label { color:var(--cyan); font:12px monospace; letter-spacing:2px; }
+  .section-heading { display:flex; justify-content:space-between; align-items:end; gap:15px; margin-bottom:24px; }
+  .section-heading h2 { margin:8px 0 0; font-size:clamp(24px,3vw,31px); }
+  .section-heading > p { margin:0 0 4px; color:var(--muted); font:12px monospace; letter-spacing:1px; }
+  .observatory-hero { position:relative; min-height:390px; display:flex; align-items:flex-end; padding:clamp(24px,5vw,48px); overflow:hidden; isolation:isolate; background:#0b1428; }
+  .observatory-backdrop,.observatory-shade { position:absolute; inset:0; width:100%; height:100%; }
+  .observatory-backdrop { z-index:-2; object-fit:cover; object-position:center; }
+  .observatory-shade { z-index:-1; background:linear-gradient(90deg,rgba(5,10,24,.88),rgba(5,10,24,.25) 75%),linear-gradient(0deg,rgba(5,10,24,.72),transparent 70%); }
+  .observatory-copy { position:relative; z-index:2; max-width:580px; }
+  .observatory-copy h2 { margin:16px 0; font-size:clamp(32px,5vw,54px); line-height:1.45; text-shadow:3px 3px 0 #30254f; }
+  .observatory-copy h2 em { color:#b8a4ed; font-style:normal; }
+  .observatory-copy p { color:#d2d9e8; font-size:15px; line-height:1.85; }
+  .observatory-coordinates { display:flex; flex-wrap:wrap; gap:16px; margin-top:25px; color:var(--cyan); font:12px monospace; letter-spacing:1px; }
+  .observatory-planet { position:absolute; right:8%; top:12%; width:clamp(120px,20vw,230px); opacity:.78; image-rendering:pixelated; filter:drop-shadow(0 0 25px rgba(130,113,181,.4)); }
+  .target-section,.field-section { margin-top:70px; }
+  .target-list { border-top:1px solid var(--border); }
+  .target-row { display:grid; grid-template-columns:42px 112px 1fr; gap:20px; align-items:center; min-height:145px; padding:18px 0; border-bottom:1px solid rgba(131,206,210,.16); }
+  .target-index { color:var(--cyan); font:12px monospace; }
+  .target-row img { width:112px; height:100px; object-fit:contain; image-rendering:pixelated; }
+  .target-row:nth-child(3) img { object-fit:cover; }
+  .target-row h3 { margin:0 0 4px; font-size:16px; }
+  .target-row small { color:var(--cyan); font:12px monospace; letter-spacing:1px; }
+  .target-row p { margin:8px 0 0; color:var(--muted); font-size:15px; line-height:1.85; }
+  .target-mark { color:var(--nebula); font-size:18px; }
+  .field-gallery { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:18px; }
+  .field-gallery figure { position:relative; margin:0; overflow:hidden; }
+  .field-gallery img { width:100%; aspect-ratio:4/3; object-fit:cover; transition:transform .3s; }
+  .field-gallery figure:hover img { transform:scale(1.04); }
+  .field-gallery figcaption { position:absolute; inset:auto 0 0; display:flex; align-items:center; gap:12px; padding:25px 14px 13px; background:linear-gradient(transparent,rgba(5,10,24,.9)); }
+  .field-gallery figcaption > span { color:var(--cyan); font:12px monospace; }
+  .field-gallery figcaption div { display:flex; flex-direction:column; gap:3px; }
+  .field-gallery figcaption strong { font-size:14px; }
+  .field-gallery figcaption small { color:var(--cyan); font:12px monospace; }
+  .observation-log { display:grid; grid-template-columns:1fr; gap:20px; align-items:center; margin-top:70px; padding:25px 0; border-top:1px solid var(--border); border-bottom:1px solid var(--border); }
+  .log-symbol { color:var(--nebula); font-size:40px; }
+  .observation-log h2 { margin:8px 0; font-size:20px; }
+  .observation-log p { max-width:720px; margin:0; color:var(--muted); font-size:15px; line-height:1.85; }
+  .log-status { color:var(--cyan); font:12px monospace; white-space:nowrap; }
+  @media(max-width:700px) { .observatory-hero { min-height:350px; padding:22px; } .observatory-planet { right:0; top:8%; width:130px; opacity:.5; } .target-row { grid-template-columns:28px 80px 1fr; gap:12px; } .target-row img { width:80px; height:80px; } .target-mark { display:none; } .field-gallery { grid-template-columns:1fr; } .observation-log { grid-template-columns:1fr; } .log-status { grid-column:2; } .section-heading { align-items:flex-start; flex-direction:column; } }
+  .target-row:nth-child(2) img { mix-blend-mode:screen; }
+  .field-gallery figure:last-child img { mix-blend-mode:screen; object-fit:contain; }
+  .featured-observation { display:grid; grid-template-columns:minmax(0,.85fr) minmax(0,1fr); gap:clamp(25px,5vw,65px); align-items:center; margin-top:65px; }
+  .feature-image { display:block; max-width:430px; width:100%; cursor:zoom-in; }
+  .feature-image img { width:100%; height:auto; object-fit:contain; }
+  .feature-copy h2 { font-size:clamp(25px,4vw,40px); margin:12px 0; }
+  .feature-copy p { color:var(--muted); font-size:16px; line-height:1.85; }
+  .feature-copy .feature-credit { color:var(--warm); font-size:13px; }
+  .field-image-link { display:block; cursor:zoom-in; }
+  .feature-image:focus-visible,.field-image-link:focus-visible { outline:2px solid var(--cyan); outline-offset:4px; }
+  .field-gallery figcaption { pointer-events:none; }
+  @media(max-width:700px) { .featured-observation { grid-template-columns:1fr; } .feature-image { max-width:100%; } }
+</style>

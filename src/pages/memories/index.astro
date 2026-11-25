@@ -1,0 +1,104 @@
+---
+import SiteLayout from '../../layouts/SiteLayout.astro';
+import PageIntro from '../../components/PageIntro.astro';
+import ImageViewer from '../../components/ImageViewer.astro';
+
+const collections = [
+  { title: '宇宙全景', en: 'UNIVERSE VIEW', src: '/media/images/universe.jpg', note: '深空星云与星海全景' },
+  { title: '紫色星域', en: 'VIOLET SECTOR', src: '/media/images/backgrounds/scenes/Scene-3.jpg', note: '明亮星体与紫色星云' },
+  { title: '远方星系', en: 'DISTANT GALAXY', src: '/media/images/galaxies/galaxy2.png', note: '旋臂结构与遥远星光' },
+  { title: '玫瑰星云', en: 'ROSE NEBULA', src: '/media/images/backgrounds/nebulae/Space004.png', note: '粉色与紫色交织的星云' },
+  { title: '青紫星云', en: 'CYAN NEBULA', src: '/media/images/backgrounds/nebulae/Space005.png', note: '青色与紫色的深空云气' },
+];
+---
+
+<SiteLayout
+  title="记忆星球 | Memories"
+  description="收藏宇宙影像，并为未来的个人照片与成长记录留下空间。"
+>
+  <section class="page-container memories-page">
+    <PageIntro
+      eyebrow="05 / PERSONAL COLLECTION"
+      title="记忆星球"
+      description="收藏喜欢的宇宙影像，也为生活、旅行和成长留下一处记忆空间。"
+    />
+
+    <section class="memory-hero">
+      <img src="/media/images/universe.jpg" alt="星云与星海构成的宇宙全景" loading="eager" />
+      <div class="memory-hero-shade"></div>
+      <div class="memory-hero-copy">
+        <span class="section-label">A COLLECTION OF MOMENTS</span>
+        <h2>把值得记住的，<br /><em>留在星海之中。</em></h2>
+        <p>在日常之外，留一片属于自己的星空。</p>
+      </div>
+    </section>
+
+    <section class="memory-gallery-section">
+      <div class="section-heading">
+        <div><span class="section-label">01 / COSMIC COLLECTION</span><h2>宇宙主题影像收藏</h2></div>
+        
+      </div>
+      <p><a href="/memories/collection/" class="collection-link">查看全部十五幅影像 ↗</a></p>
+      <div class="memory-gallery">
+        {collections.map((item, index) => (
+          <figure class:list={['memory-figure', `memory-figure-${index + 1}`]}>
+            <a class="memory-image gallery-trigger" href={item.src} data-gallery-item={item.title} aria-label={`放大查看：${item.title}`}><img src={item.src} alt={item.title} loading="lazy" /><span>0{index + 1}</span></a>
+            <figcaption><strong>{item.title}</strong><small>{item.en}</small><p>{item.note}</p></figcaption>
+          </figure>
+        ))}
+      </div>
+    </section>
+
+    <section class="memory-timeline">
+      <div class="section-heading">
+        <div><span class="section-label">02 / PERSONAL TIMELINE</span><h2>个人记忆</h2></div>
+        
+      </div>
+      <p class="memory-reminder">这里暂未发布个人照片或成长记录。</p>
+    </section>
+    <ImageViewer />
+  </section>
+</SiteLayout>
+
+<style>
+  .memories-page { position:relative; isolation:isolate; }
+  .memories-page::before { content:""; position:absolute; z-index:-1; inset:0; pointer-events:none; opacity:.1; background:url('/media/images/backgrounds/starfields/BackdropBlackLittleSparkBlack.png') center top/420px repeat; }
+  .section-label { color:var(--cyan); font:12px monospace; letter-spacing:2px; }
+  .section-heading { display:flex; justify-content:space-between; align-items:end; gap:15px; margin-bottom:25px; }
+  .section-heading h2 { margin:8px 0 0; font-size:clamp(24px,3vw,31px); }
+  .section-heading > p { margin:0 0 4px; color:var(--muted); font:12px monospace; letter-spacing:1px; }
+  .memory-hero { position:relative; min-height:390px; overflow:hidden; display:flex; align-items:flex-end; padding:clamp(24px,5vw,48px); isolation:isolate; background:#0b1428; }
+  .memory-hero > img,.memory-hero-shade { position:absolute; inset:0; width:100%; height:100%; }
+  .memory-hero > img { z-index:-2; object-fit:cover; }
+  .memory-hero-shade { z-index:-1; background:linear-gradient(90deg,rgba(5,10,24,.82),rgba(5,10,24,.2)),linear-gradient(0deg,rgba(5,10,24,.82),transparent 75%); }
+  .memory-hero-copy { max-width:560px; }
+  .memory-hero-copy h2 { margin:15px 0; font-size:clamp(32px,5vw,54px); line-height:1.45; text-shadow:3px 3px 0 #30254f; }
+  .memory-hero-copy h2 em { color:#b9a6eb; font-style:normal; }
+  .memory-hero-copy p { color:#d0d9e9; font-size:15px; line-height:1.85; }
+  .memory-coordinate { position:absolute; right:18px; top:18px; color:#e0e7f4; font:12px monospace; letter-spacing:1px; }
+  .memory-gallery-section,.memory-timeline { margin-top:70px; }
+  .memory-gallery { display:grid; grid-template-columns:repeat(6,minmax(0,1fr)); gap:22px 16px; }
+  .memory-figure { grid-column:span 2; margin:0; min-width:0; }
+  .memory-figure-1,.memory-figure-2 { grid-column:span 3; }
+  .memory-image { position:relative; overflow:hidden; background:#0b1428; }
+  .memory-image img { width:100%; aspect-ratio:16/10; object-fit:cover; transition:transform .35s; }
+  .memory-figure:hover .memory-image img { transform:scale(1.04); }
+  .memory-image span { position:absolute; top:12px; left:12px; color:#fff; font:12px monospace; text-shadow:0 1px 5px #000; }
+  .memory-figure figcaption { padding:13px 0; }
+  .memory-figure figcaption strong { display:block; font-size:14px; }
+  .memory-figure figcaption small { color:var(--cyan); font:12px monospace; letter-spacing:1px; }
+  .memory-figure figcaption p { margin:7px 0 0; color:var(--muted); font-size:14px; }
+  .timeline-list { position:relative; margin-left:12px; border-left:1px solid rgba(130,113,181,.55); }
+  .timeline-item { position:relative; display:grid; grid-template-columns:90px 1fr 35px; gap:20px; align-items:start; padding:20px 0 20px 30px; border-bottom:1px solid rgba(131,206,210,.13); }
+  .timeline-dot { position:absolute; left:-5px; top:26px; width:9px; height:9px; background:var(--nebula); transform:rotate(45deg); box-shadow:0 0 10px rgba(130,113,181,.5); }
+  .timeline-date { color:var(--cyan); font:12px monospace; letter-spacing:1px; }
+  .timeline-item h3 { margin:0 0 4px; font-size:15px; }
+  .timeline-item small { color:var(--nebula); font:12px monospace; }
+  .timeline-item p { margin:8px 0 0; color:var(--muted); font-size:14px; }
+  .timeline-number { color:var(--muted); font:12px monospace; text-align:right; }
+  .memory-reminder { margin-top:22px; color:var(--muted); font-size:15px; line-height:1.85; }
+  @media(max-width:700px) { .memory-gallery { grid-template-columns:repeat(2,minmax(0,1fr)); } .memory-figure,.memory-figure-1,.memory-figure-2 { grid-column:span 1; } .section-heading { align-items:flex-start; flex-direction:column; } .timeline-item { grid-template-columns:65px 1fr 25px; gap:12px; padding-left:22px; } }
+  @media(max-width:480px) { .memory-hero { min-height:340px; padding:22px; } .memory-gallery { grid-template-columns:1fr; } }
+  .gallery-trigger { display:block; cursor:zoom-in; }
+  .gallery-trigger:focus-visible { outline:2px solid var(--cyan); outline-offset:4px; }
+</style>

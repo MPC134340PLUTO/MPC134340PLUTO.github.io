@@ -1,0 +1,52 @@
+---
+import SiteLayout from '../../layouts/SiteLayout.astro';
+import PageIntro from '../../components/PageIntro.astro';
+import { fleet } from '../../data/fleet';
+---
+<SiteLayout title="星际机库 | Hangar" description="选择像素飞船，进入星际航行训练。">
+  <section class="page-container hangar" data-hangar>
+    <PageIntro eyebrow="HANGAR / 134340" title="星际机库" description="在出发之前，选择一艘适合自己的飞船。" />
+    <div class="hangar-layout">
+      <section class="ship-stage">
+        <div class="stage-copy"><span lang="en">FLIGHT DECK</span><h2 data-name>{fleet[0].name}</h2><p data-en>{fleet[0].en}</p></div>
+        <div class="stage-orbit" aria-hidden="true"></div>
+        <img data-ship src={fleet[0].src} alt={fleet[0].name} />
+        <p data-description>{fleet[0].description}</p>
+        <p>巡航速度：<strong data-speed>{fleet[0].speed}</strong> px/s</p>
+        <a class="launch" href="/hangar/voyage/">进入航行训练 <span aria-hidden="true">↗</span></a>
+        <p data-save-status role="status">已准备就绪。</p>
+      </section>
+      <section class="fleet-list" aria-label="选择飞船">
+        <h2>飞船图鉴 <small lang="en">FLEET</small></h2>
+        {fleet.map((ship,index)=>(<button type="button" class="ship-choice" data-id={ship.id} data-name={ship.name} data-en={ship.en} data-src={ship.src} data-description={ship.description} data-speed={ship.speed} aria-pressed={index===0?'true':'false'}><img src={ship.src} alt="" /><span><strong>{ship.name}</strong><small lang="en">{ship.en}</small></span><span class="choice-mark" aria-hidden="true">选择</span></button>))}
+      </section>
+    </div>
+    <section class="ship-upgrades" id="upgrade" data-upgrade-panel><h2>飞船强化 · FLIGHT LAB</h2><p>领航等级 <strong data-rank>1</strong> · 星尘余额 <strong data-balance>0</strong></p><p class="upgrade-intro">完成航行任务获取星尘，强化效果适用于全部飞船。</p><div class="upgrade-list">{[{id:'shield',name:'护盾阵列',desc:'每级增加 1 格护盾'},{id:'pulse',name:'脉冲核心',desc:'每级减少 0.25 秒充能时间'},{id:'drive',name:'推进引擎',desc:'每级提高 7% 移动速度'}].map(u=><div><h3>{u.name}</h3><p>{u.desc}</p><button type="button" data-upgrade={u.id}>强化</button></div>)}</div><p data-upgrade-status role="status"></p><p data-achievements></p></section><section class="mission-brief"><h2>星光守卫任务 <small>MISSION</small></h2><p>守护星光核心，收集信标恢复护盾，迎接逐渐增强的陨石波次。</p><a href="/hangar/voyage/">出发 ↗</a> · <a href="/oracle/">领取今日星签 ↗</a></section>
+    <a href="/cabin/">← 返回个人舱</a> · <a href="/galaxy/#star-map">星际地图</a> · <a href="/explore/">所有目的地 ↗</a>
+  </section>
+</SiteLayout>
+<script>
+  import {loadProgress,saveProgress,purchase,upgradeCost,levelOf,achievements,type Upgrade} from "../../data/voyageProgress";
+  const root = document.querySelector<HTMLElement>('[data-hangar]');
+  const choices = Array.from(root?.querySelectorAll<HTMLButtonElement>('[data-id]') ?? []);
+  const img = root?.querySelector<HTMLImageElement>('[data-ship]');
+  const status = root?.querySelector<HTMLElement>('[data-save-status]');
+  function select(btn: HTMLButtonElement, save = true) {
+    choices.forEach(b=>b.setAttribute('aria-pressed',String(b===btn)));
+    if(img){img.src=btn.dataset.src??'';img.alt=btn.dataset.name??'';}
+    for(const k of ['name','en','description','speed'] as const){const el=root?.querySelector<HTMLElement>(`.ship-stage [data-${k}]`);if(el)el.textContent=btn.dataset[k]??'';}
+    if(save){try{localStorage.setItem('pu.ship.v1',btn.dataset.id??'scout');if(status)status.textContent='已保存当前飞船。';}catch{if(status)status.textContent='浏览器存储不可用，选择仅在此页有效。';}}
+  }
+  let saved='';try{saved=localStorage.getItem('pu.ship.v1')??'';}catch{}
+  const initial=choices.find(b=>b.dataset.id===saved)??choices[0];if(initial)select(initial,false);
+  choices.forEach(b=>b.addEventListener('click',()=>select(b)));
+  const panel=root?.querySelector<HTMLElement>('[data-upgrade-panel]');const progress=loadProgress();
+  function renderLab(){if(!panel)return;panel.querySelector('[data-rank]')!.textContent=String(levelOf(progress));panel.querySelector('[data-balance]')!.textContent=String(progress.credits);panel.querySelector('[data-achievements]')!.textContent=achievements(progress).map(a=>(a.earned?'✓ ':'◇ ')+a.name).join(' · ');panel.querySelectorAll<HTMLButtonElement>('[data-upgrade]').forEach(b=>{const id=b.dataset.upgrade as Upgrade,level=progress.upgrades[id],cost=upgradeCost(level);b.disabled=level>=3||progress.credits<cost;b.textContent=level>=3?'Lv.3 · 已满级':`Lv.${level} → ${level+1} · ${cost} 星尘`;});}
+  panel?.querySelectorAll<HTMLButtonElement>('[data-upgrade]').forEach(b=>b.addEventListener('click',()=>{if(purchase(progress,b.dataset.upgrade as Upgrade)){const saved=saveProgress(progress);panel.querySelector('[data-upgrade-status]')!.textContent=saved?'强化完成。':'强化仅在本页有效，浏览器存储不可用。';renderLab();}}));renderLab();
+</script>
+<style>
+  .mission-brief{border-top:1px solid var(--border);padding:24px 0;margin:22px 0}.mission-brief a{color:var(--cyan)}
+  .hangar-layout{display:grid;grid-template-columns:minmax(0,1.45fr) minmax(0,1fr);gap:clamp(24px,5vw,65px);align-items:start;margin:36px 0;}
+  .ship-stage{position:relative;isolation:isolate;overflow:hidden;min-height:520px;padding:30px;background:linear-gradient(150deg,#0b1428a0,#070d1be8),url('/media/images/backgrounds/community/hangar.webp') center/cover;border-top:1px solid var(--border);border-bottom:1px solid var(--border);display:flex;flex-direction:column;align-items:center;text-align:center;justify-content:center;gap:14px;}
+  .stage-copy span,.stage-copy p,small{color:var(--cyan);font-size:14px;letter-spacing:2px;}.stage-copy h2{font-size:clamp(28px,4vw,46px);margin:8px 0;}.stage-copy p,.ship-stage p{margin:0;}.ship-stage img{width:min(75%,270px);height:180px;object-fit:contain;image-rendering:pixelated;filter:drop-shadow(0 0 16px #83ced249);z-index:1;}.stage-orbit{position:absolute;z-index:-1;top:36%;width:80%;height:27%;border:1px dashed #83ced250;border-radius:50%;transform:rotate(-13deg);}.launch{display:inline-block;background:#7160b6;border:2px solid #a18bdc;padding:12px 24px;color:white;}.fleet-list h2{font-size:24px;margin:0 0 12px;}.fleet-list h2 small{display:block;margin-top:4px;}.ship-choice{width:100%;display:grid;grid-template-columns:70px 1fr auto;align-items:center;gap:14px;text-align:left;padding:15px 10px;background:transparent;color:var(--text);border:0;border-bottom:1px solid var(--border);cursor:pointer;font:inherit;min-height:75px;}.ship-choice img{width:65px;height:50px;object-fit:contain;image-rendering:pixelated;}.ship-choice strong,.ship-choice small{display:block;}.ship-choice small{font-size:12px;}.choice-mark{font-size:12px;color:var(--muted);}.ship-choice[aria-pressed="true"]{background:#83ced211;border-left:3px solid var(--cyan);}.ship-choice[aria-pressed="true"] .choice-mark{color:var(--cyan);}.ship-choice[aria-pressed="true"] .choice-mark::after{content:' ✓';}.ship-choice:hover{background:#a18bdc15;}a:focus-visible,button:focus-visible{outline:2px solid var(--cyan);outline-offset:4px;}.note,[data-save-status]{font-size:14px;color:var(--muted);}@media(max-width:800px){.hangar-layout{grid-template-columns:1fr;}.ship-stage{min-height:420px;padding:20px;}}
+.ship-upgrades{padding:24px 0;border-top:1px solid var(--border);scroll-margin-top:140px}.ship-upgrades strong{color:var(--cyan)}.upgrade-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:24px}.upgrade-list>div{padding:10px 0;border-bottom:1px solid var(--border)}.upgrade-list h3{color:var(--cyan);margin-bottom:8px}.upgrade-list p,.upgrade-intro{color:var(--muted)}.upgrade-list button{font:inherit;color:var(--text);background:#263451;border:1px solid var(--border);padding:10px;cursor:pointer}.upgrade-list button:disabled{opacity:.55;cursor:default}</style>

@@ -1,0 +1,50 @@
+---
+import SiteLayout from './SiteLayout.astro';
+import { categoryName, type ArchiveFrontmatter } from '../data/archive';
+interface Props {
+  frontmatter: ArchiveFrontmatter;
+  headings?: { depth: number; slug: string; text: string }[];
+}
+const { frontmatter, headings = [] } = Astro.props;
+const sections = headings.filter(heading => heading.depth === 2 || heading.depth === 3);
+---
+<SiteLayout title={`${frontmatter.title} | 知识档案`} description={frontmatter.description}>
+  <section class="page-container reading-page">
+    <a class="back-link" href="/archive/">← 返回知识档案 / ARCHIVE</a>
+    <header class="reading-header">
+      <p class="reading-category">{categoryName(frontmatter.category)} {frontmatter.sample && ' / 示例指南'}</p>
+      <h1>{frontmatter.title}</h1>
+      <p class="reading-summary">{frontmatter.description}</p>
+      {frontmatter.tags?.length ? <p class="reading-tags">{frontmatter.tags.map(tag => <span>#{tag}</span>)}</p> : null}
+    </header>
+    <div class:list={['reading-grid', { 'has-toc': sections.length > 0 }]}>
+      {sections.length > 0 && <nav aria-label="本文目录" class="reading-toc"><h2>本文目录</h2>{sections.map(s => <a href={`#${s.slug}`} class:list={{sub: s.depth === 3}}>{s.text}</a>)}</nav>}
+      <article class="reading-body"><slot /></article>
+    </div>
+  </section>
+</SiteLayout>
+<style>
+  .reading-page { max-width:1100px; }
+  .back-link { color:var(--cyan); font-size:15px; }
+  .reading-header { padding:28px 0; margin-bottom:36px; border-bottom:1px solid var(--border); }
+  .reading-category { color:var(--cyan); font-size:14px; }
+  .reading-header h1 { font-size:clamp(32px,5vw,54px); line-height:1.35; margin:16px 0; }
+  .reading-summary { color:var(--muted); font-size:17px; line-height:1.8; }
+  .reading-tags { display:flex; gap:14px; flex-wrap:wrap; color:#b8a3f0; font-size:14px; }
+  .reading-grid { display:grid; grid-template-columns:minmax(0,780px); gap:42px; }
+  .reading-grid.has-toc { grid-template-columns:minmax(0,1fr) minmax(170px,220px); }
+  .reading-toc { grid-column:2; grid-row:1; align-self:start; display:grid; gap:10px; border-left:1px solid var(--border); padding-left:18px; position:sticky; top:28px; }
+  .reading-toc h2 { font-size:16px; margin:0 0 6px; }
+  .reading-toc a { font-size:14px; color:var(--muted); }
+  .reading-toc a.sub { padding-left:12px; }
+  .reading-toc a:hover,.back-link:hover { color:var(--cyan); text-decoration:underline; }
+  .reading-body { grid-column:1; grid-row:1; min-width:0; font-size:17px; line-height:1.95; overflow-wrap:anywhere; }
+  .reading-body :global(h2) { font-size:26px; margin:36px 0 14px; color:var(--text); scroll-margin-top:30px; }
+  .reading-body :global(h3) { font-size:21px; margin:26px 0 12px; }
+  .reading-body :global(p) { margin:14px 0; }
+  .reading-body :global(pre) { overflow:auto; max-width:100%; padding:18px; border:1px solid var(--border); border-radius:5px; font-size:14px; line-height:1.65; }
+  .reading-body :global(:not(pre) > code) { color:var(--cyan); background:var(--panel); padding:2px 5px; border-radius:3px; }
+  .reading-body :global(a) { color:var(--cyan); text-decoration:underline; }
+  .reading-body :global(blockquote) { margin:20px 0; border-left:3px solid var(--nebula); padding-left:16px; color:var(--muted); }
+  @media(max-width:760px) { .reading-grid.has-toc { grid-template-columns:1fr; } .reading-toc { position:static; grid-column:1; grid-row:auto; } .reading-body { grid-row:auto; font-size:16px; } }
+</style>

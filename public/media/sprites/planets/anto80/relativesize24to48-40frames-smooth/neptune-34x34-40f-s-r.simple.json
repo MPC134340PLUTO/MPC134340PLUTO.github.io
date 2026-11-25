@@ -1,0 +1,13 @@
+{
+  "image": "neptune-34x34-40f-s-r.png",
+  "frame_width": 34,
+  "frame_height": 34,
+  "pivot_x": 17,
+  "pivot_y": 17,
+  "columns": 20,
+  "rows": 2,
+  "frame_count": 40,
+  "frame_delay": 2,
+  "fps": 30,
+  "order": "left-to-right, top-to-bottom"
+}

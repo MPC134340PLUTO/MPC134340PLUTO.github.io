@@ -1,0 +1,13 @@
+{
+  "image": "mercury-26x26-120f-s-r.png",
+  "frame_width": 26,
+  "frame_height": 26,
+  "pivot_x": 13,
+  "pivot_y": 13,
+  "columns": 30,
+  "rows": 4,
+  "frame_count": 120,
+  "frame_delay": 2,
+  "fps": 30,
+  "order": "left-to-right, top-to-bottom"
+}

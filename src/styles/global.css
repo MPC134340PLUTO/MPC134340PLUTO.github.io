@@ -1,0 +1,328 @@
+
+/* ========================================
+   PIXEL UNIVERSE
+   GLOBAL DESIGN SYSTEM V0.1
+======================================== */
+
+/* 01. COLOR SYSTEM */
+
+:root {
+  color-scheme: dark;
+
+  --space: #0B1428;
+  --space-deep: #070D1B;
+
+  --planet: #527BAE;
+  --nebula: #8271B5;
+
+  --warm: #D8AC74;
+  --cyan: #83CED2;
+
+  --panel: #111E35;
+  --panel-light: #192944;
+
+  --border: #344967;
+
+  --text: #E6EAF4;
+  --muted: #9AAAC0;
+
+  --shadow: 4px 4px 0 #050B17;
+
+  --container: 1160px;
+}
+
+/* 02. RESET */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  margin: 0;
+  padding: 0;
+  background: var(--space);
+  scroll-behavior: smooth;
+  scroll-padding-top: 90px;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 0;
+
+  color: var(--text);
+  background: var(--space);
+
+  font-family:
+    "Microsoft YaHei",
+    "Noto Sans SC",
+    sans-serif;
+
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font: inherit;
+}
+
+/* 03. GLOBAL LAYOUT */
+
+.site-shell {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow: clip;
+}
+
+#main-content {
+  flex: 1;
+}
+
+.page-container {
+  width: min(var(--container), 90%);
+  margin: 0 auto;
+  padding: 70px 0 100px;
+}
+
+/* 04. TYPOGRAPHY */
+
+.pixel-title {
+  font-family: monospace;
+  font-weight: bold;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.eyebrow {
+  color: var(--cyan);
+  font-family: monospace;
+  font-size: 11px;
+  letter-spacing: 3px;
+}
+
+.text-muted {
+  color: var(--muted);
+}
+
+/* 05. PIXEL PANELS */
+
+.pixel-panel {
+  padding: 28px;
+
+  background: var(--panel);
+  border: 1px solid var(--border);
+
+  box-shadow: var(--shadow);
+}
+
+.pixel-panel:hover {
+  border-color: var(--planet);
+}
+
+/* 06. BUTTON SYSTEM */
+
+.pixel-button {
+  min-height: 48px;
+  padding: 0 22px;
+
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 14px;
+
+  color: white;
+  background: var(--planet);
+
+  border: 2px solid var(--nebula);
+  box-shadow: var(--shadow);
+
+  font-family: monospace;
+  font-size: 11px;
+  letter-spacing: 1px;
+
+  cursor: pointer;
+  transition:
+    background .2s,
+    transform .2s;
+}
+
+.pixel-button:hover {
+  background: var(--nebula);
+  transform: translate(-2px, -2px);
+}
+
+/* 07. DIVIDERS */
+
+.pixel-divider {
+  width: 100%;
+  height: 1px;
+  background: var(--border);
+  border: 0;
+}
+
+/* 08. SCROLLBAR */
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--space-deep);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--nebula);
+}
+
+/* 09. SELECTION */
+
+::selection {
+  color: white;
+  background: var(--nebula);
+}
+
+/* 10. ACCESSIBILITY */
+
+:focus-visible {
+  outline: 2px solid var(--cyan);
+  outline-offset: 4px;
+}
+
+/* 11. RESPONSIVE */
+
+@media (max-width: 900px) {
+  .page-container {
+    width: 92%;
+    padding: 55px 0 75px;
+  }
+}
+
+@media (max-width: 600px) {
+  body {
+    font-size: 13px;
+  }
+
+  .page-container {
+    padding: 40px 0 60px;
+  }
+
+  .pixel-panel {
+    padding: 18px;
+  }
+}
+
+/* 12. REDUCED MOTION */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+/* ==========================================
+   PIXEL UNIVERSE - HOME NEBULA BACKGROUND
+   首页真实星云背景
+========================================== */
+
+.home-page {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+}
+
+.home-background {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+/* 真实星云图片 */
+.home-bg-image {
+  position: absolute;
+  inset: 0;
+
+  background-image:
+    linear-gradient(
+      90deg,
+      rgba(7, 13, 29, 0.68) 0%,
+      rgba(7, 13, 29, 0.35) 55%,
+      rgba(7, 13, 29, 0.28) 100%
+    ),
+    linear-gradient(
+      180deg,
+      rgba(7, 13, 29, 0.15) 0%,
+      rgba(7, 13, 29, 0.75) 100%
+    ),
+    url('/media/images/backgrounds/scenes/Scene-1.jpg');
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  transform: scale(1.03);
+}
+
+/* 原有动态星空叠加 */
+.home-background .space-background {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  opacity: 0.45;
+  pointer-events: none;
+}
+
+/* 首页文字与按钮置于背景上方 */
+.home-content {
+  position: relative;
+  z-index: 2;
+}
+
+/* 移动端背景适配 */
+@media (max-width: 768px) {
+  .home-bg-image {
+    background-position: 55% center;
+  }
+}
+
+/* Subpage readability refinement */
+.page-container { font-size: 16px; }
+.page-container h1, .page-container h2, .page-container h3 { font-family: "Microsoft YaHei", "PingFang SC", "Noto Sans SC", sans-serif; }
+.page-container { overflow-wrap: anywhere; }
+
+/* Pixel Universe local webfonts — copy your downloaded files first. */
+@font-face { font-family: "PU Fusion"; src: url("/fonts/fusion-pixel-12px-proportional-zh_hans.otf.woff2") format("woff2"); font-style:normal; font-weight:400; font-display:swap; }
+@font-face { font-family: "PU VT323"; src: url("/fonts/VT323-Regular.ttf") format("truetype"); font-style:normal; font-weight:400; font-display:swap; }
+:root { --font-pixel-cn: "PU Fusion", "Microsoft YaHei", "Noto Sans SC", sans-serif; --font-pixel-en: "PU VT323", "Courier New", monospace; }
+/* Only display headings and navigation; keep prose and code fonts unchanged. */
+.site-shell .page-intro h1, .site-shell .title-cn, .site-shell .logo-copy strong, .site-shell .node-copy strong, .site-shell .toggle-copy strong, .site-shell .orbit-home strong { font-family:var(--font-pixel-cn); font-weight:400; }
+.site-shell .page-intro .eyebrow, .site-shell .title-en, .site-shell .logo-copy small, .site-shell .toggle-copy small, .site-shell .node-copy small, .site-shell .orbit-home small, .site-shell .cabin-shortcuts small { font-family:var(--font-pixel-en); font-weight:400; }
+.site-shell .node-copy small,.site-shell .toggle-copy small,.site-shell .logo-copy small,.site-shell .orbit-home small { font-size:14px; letter-spacing:1px; }
+.site-shell .page-intro .eyebrow { font-size:16px; }
+
+/* Page-specific background: keep the reading area legible and never repeat images. */
+#main-content.has-page-backdrop { position:relative; isolation:isolate; }
+#main-content.has-page-backdrop::before { content:"";position:absolute;z-index:-1;inset:0 0 auto;height:min(900px,100%);pointer-events:none;background-image:linear-gradient(180deg,rgba(11,20,40,var(--page-strength)),#0b1428 100%),var(--page-image);background-position:center,var(--page-position,center);background-size:cover;background-repeat:no-repeat; }
+html { scroll-padding-top: 100px; }
+@media(max-width:880px){html{scroll-padding-top:145px;}}

@@ -1,0 +1,176 @@
+---
+import SiteLayout from '../../layouts/SiteLayout.astro';
+import PageIntro from '../../components/PageIntro.astro';
+import MotionControl from '../../components/MotionControl.astro';
+
+const rotation = (src: string) => src.replace('/images/planets/solar-system-static/', '/gifs/planets/pixel-solar-system/').replace(/\.png$/, '.gif');
+
+const planets = [
+  { name: '水星', en: 'MERCURY', type: '类地行星', src: '/media/images/planets/solar-system-static/mercury-rotation.png', description: '距离太阳最近，表面布满撞击坑，昼夜温差极大。' },
+  { name: '金星', en: 'VENUS', type: '类地行星', src: '/media/images/planets/solar-system-static/venus-rotation.png', description: '浓密的大气层带来强烈温室效应，是太阳系最热的行星。' },
+  { name: '地球', en: 'EARTH', type: '类地行星', src: '/media/images/planets/solar-system-static/earth-rotation.png', description: '拥有液态水与已知生命，是我们共同的宇宙家园。' },
+  { name: '火星', en: 'MARS', type: '类地行星', src: '/media/images/planets/solar-system-static/mars-rotation.png', description: '红色地表与古老河谷，让它成为行星探索的重要目标。' },
+  { name: '木星', en: 'JUPITER', type: '气态巨行星', src: '/media/images/planets/solar-system-static/jupiter-rotation.png', description: '太阳系最大的行星，拥有强大的风暴系统与众多卫星。' },
+  { name: '土星', en: 'SATURN', type: '气态巨行星', src: '/media/images/planets/solar-system-static/saturn-rotation.png', description: '醒目的环系统由冰、岩石和尘埃颗粒组成。' },
+  { name: '天王星', en: 'URANUS', type: '冰巨行星', src: '/media/images/planets/solar-system-static/uranus-rotation.png', description: '自转轴倾斜明显，呈现独特的侧向自转姿态。' },
+  { name: '海王星', en: 'NEPTUNE', type: '冰巨行星', src: '/media/images/planets/solar-system-static/neptune-rotation.png', description: '遥远而寒冷，拥有太阳系中速度极快的大气风暴。' },
+];
+
+const minorBodies = [
+  { name: '月球', en: 'THE MOON', src: '/media/images/planets/solar-system-static/moon-rotation.png', note: '地球唯一的天然卫星' },
+  { name: '冥王星', en: 'PLUTO', src: '/media/images/planets/solar-system-static/pluto-rotation.png', note: '柯伊伯带中的矮行星，也是 134340 的灵感来源' },
+];
+---
+
+<SiteLayout
+  title="太阳系探索 | Solar System"
+  description="以像素星体图像探索太阳系八大行星与其他天体。"
+>
+  <section class="page-container solar-page">
+    <PageIntro
+      eyebrow="04 / CELESTIAL EXPLORATION"
+      title="太阳系探索"
+      description="从太阳出发，沿着行星轨道认识我们的宇宙家园。每颗星球都拥有独特的色彩、环境与故事。"
+    />
+
+    <section class="solar-hero">
+      <div class="solar-hero-copy">
+        <span class="section-label">OUR HOME IN THE COSMOS</span>
+        <h2>从一颗恒星，<br /><em>认识八个世界。</em></h2>
+        <p>太阳系由太阳、八大行星、矮行星、卫星以及大量小天体组成。从岩石行星到气态与冰巨行星，认识这些不同的世界。</p>
+        <div class="solar-facts">
+          <span><b>08</b> 行星 / PLANETS</span>
+          <span><b>02</b> 精选天体 / OTHER BODIES</span>
+          <span><b>134340</b> 冥王星编号 / PLUTO</span>
+        </div>
+      </div>
+
+      <div class="solar-orbit-art" aria-label="太阳与行星轨道示意图">
+        <div class="solar-orbit orbit-a"></div>
+        <div class="solar-orbit orbit-b"></div>
+        <div class="solar-orbit orbit-c"></div>
+        <div class="sun-core"><span>☼</span></div>
+        <img class="orbit-planet orbit-earth" src="/media/images/planets/solar-system-static/earth-rotation.png" alt="" />
+        <img class="orbit-planet orbit-saturn" src="/media/images/planets/solar-system-static/saturn-rotation.png" alt="" />
+        <img class="orbit-planet orbit-neptune" src="/media/images/planets/solar-system-static/neptune-rotation.png" alt="" />
+      </div>
+    </section>
+
+    <section class="planet-section">
+      <div class="section-heading">
+        <div>
+          <span class="section-label">01 / PLANETARY DATABASE</span>
+          <h2>八大行星</h2>
+        </div>
+        
+      </div>
+      <p class="scale-note">像素星图 · 示意比例</p>
+
+      <MotionControl />
+      <div class="planet-grid">
+        {planets.map((planet, index) => (
+          <article class="planet-entry">
+            <div class="planet-visual">
+              <span class="planet-index">0{index + 1}</span>
+              <img src={planet.src} data-motion-src={rotation(planet.src)} alt={`${planet.name}像素行星`} loading="lazy" />
+              <span class="planet-orbit-mark"></span>
+            </div>
+            <div class="planet-info">
+              <div class="planet-heading">
+                <div><h3>{planet.name}</h3><small>{planet.en}</small></div>
+                <span>{planet.type}</span>
+              </div>
+              <p>{planet.description}</p>
+            </div>
+          </article>
+        ))}
+      </div>
+    </section>
+
+    <section class="minor-section">
+      <div class="section-heading">
+        <div>
+          <span class="section-label">02 / OTHER CELESTIAL BODIES</span>
+          <h2>卫星与矮行星</h2>
+        </div>
+        
+      </div>
+      <div class="minor-grid">
+        {minorBodies.map((body) => (
+          <article class="minor-entry">
+            <img src={body.src} data-motion-src={rotation(body.src)} alt={body.name} loading="lazy" />
+            <div><h3>{body.name}</h3><small>{body.en}</small><p>{body.note}</p></div>
+          </article>
+        ))}
+      </div>
+    </section>
+
+    <div class="solar-note">
+      
+      <p>本页为天体艺术示意，大小、距离及轨道均不按实际比例绘制。</p>
+    </div>
+
+    <div class="solar-footer">
+      <span>太阳系探索 / SOLAR SYSTEM</span>
+      <a href="/observatory/">前往深空观测站 ↗</a>
+    </div>
+  </section>
+</SiteLayout>
+
+<style>
+  .solar-page { position:relative; }
+  .section-label { color:var(--cyan); font:12px monospace; letter-spacing:2px; }
+  .section-heading { display:flex; justify-content:space-between; align-items:end; gap:16px; margin-bottom:12px; }
+  .section-heading h2 { margin:8px 0 0; font-size:clamp(24px,3vw,32px); }
+  .section-heading > p { margin:0 0 5px; color:var(--muted); font:12px monospace; letter-spacing:1px; }
+  .solar-hero {
+    position:relative; display:grid; grid-template-columns:1fr .9fr; gap:28px; align-items:center;
+    min-height:350px; padding:clamp(24px,4vw,42px); overflow:hidden;
+    background:linear-gradient(105deg,rgba(10,19,38,.97),rgba(15,27,51,.88)),url('/media/images/backgrounds/nebulae/Space001.png') center/cover;
+    border-top:1px solid rgba(131,206,210,.3); border-bottom:1px solid rgba(131,206,210,.3);
+  }
+  .solar-hero-copy { position:relative; z-index:2; }
+  .solar-hero-copy h2 { margin:16px 0; font-size:clamp(32px,4vw,50px); line-height:1.45; }
+  .solar-hero-copy h2 em { color:#b6a1e8; font-style:normal; }
+  .solar-hero-copy p { max-width:510px; color:var(--muted); font-size:15px; line-height:1.85; }
+  .solar-facts { display:flex; flex-wrap:wrap; gap:18px; margin-top:28px; }
+  .solar-facts span { display:flex; flex-direction:column; gap:3px; color:var(--muted); font:12px monospace; }
+  .solar-facts b { color:var(--cyan); font-size:17px; }
+  .solar-orbit-art { position:relative; min-height:290px; display:grid; place-items:center; }
+  .solar-orbit { position:absolute; left:50%; top:50%; border:1px solid rgba(161,139,220,.36); border-radius:50%; transform:translate(-50%,-50%); }
+  .orbit-a { width:80%; height:42%; transform:translate(-50%,-50%) rotate(-20deg); }
+  .orbit-b { width:96%; height:65%; transform:translate(-50%,-50%) rotate(28deg); border-color:rgba(131,206,210,.25); }
+  .orbit-c { width:56%; height:92%; transform:translate(-50%,-50%) rotate(68deg); border-color:rgba(161,139,220,.22); }
+  .sun-core { width:88px; height:88px; display:grid; place-items:center; border-radius:50%; background:radial-gradient(circle,#fff2bc 0 10%,#f5bd67 24%,#b56b4c 60%,rgba(181,107,76,.05) 72%); color:#fff4ce; font-size:43px; filter:drop-shadow(0 0 24px rgba(245,189,103,.6)); }
+  .orbit-planet { position:absolute; object-fit:contain; image-rendering:pixelated; filter:drop-shadow(0 0 12px rgba(131,206,210,.35)); }
+  .orbit-earth { width:58px; top:17%; left:17%; }
+  .orbit-saturn { width:88px; right:8%; top:42%; }
+  .orbit-neptune { width:54px; left:26%; bottom:8%; }
+  .planet-section,.minor-section { margin-top:70px; }
+  .scale-note { margin:12px 0 25px; color:var(--muted); font-size:14px; }
+  .planet-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); column-gap:34px; }
+  .planet-entry { display:grid; grid-template-columns:130px 1fr; gap:18px; align-items:center; min-width:0; padding:22px 0; border-bottom:1px solid rgba(131,206,210,.17); }
+  .planet-visual { position:relative; display:grid; place-items:center; min-height:112px; }
+  .planet-visual img { width:clamp(72px,8vw,112px); height:112px; object-fit:contain; image-rendering:pixelated; filter:drop-shadow(0 0 12px rgba(130,113,181,.25)); }
+  .planet-index { position:absolute; left:0; top:0; color:var(--cyan); font:12px monospace; }
+  .planet-orbit-mark { position:absolute; width:85%; height:35%; border:1px dashed rgba(130,113,181,.25); border-radius:50%; transform:rotate(-25deg); pointer-events:none; }
+  .planet-info { min-width:0; }
+  .planet-heading { display:flex; align-items:center; justify-content:space-between; gap:8px; }
+  .planet-heading h3 { margin:0; font-size:18px; }
+  .planet-heading small { color:var(--cyan); font:12px monospace; letter-spacing:1px; }
+  .planet-heading span { color:var(--warm); font-size:14px; white-space:nowrap; }
+  .planet-info p { margin:10px 0 0; color:var(--muted); font-size:15px; line-height:1.85; }
+  .minor-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:28px; }
+  .minor-entry { display:flex; align-items:center; gap:20px; padding:16px 0; border-bottom:1px solid rgba(131,206,210,.17); }
+  .minor-entry img { width:90px; height:90px; object-fit:contain; image-rendering:pixelated; }
+  .minor-entry h3 { margin:0 0 3px; font-size:17px; }
+  .minor-entry small { color:var(--cyan); font:12px monospace; }
+  .minor-entry p { margin:8px 0 0; color:var(--muted); font-size:14px; }
+  .solar-note { display:flex; gap:14px; align-items:flex-start; margin-top:55px; padding:18px 0; border-top:1px solid var(--border); border-bottom:1px solid var(--border); }
+  .note-star { color:var(--warm); font-size:20px; }
+  .solar-note p { margin:0; color:var(--muted); font-size:15px; line-height:1.85; }
+  .solar-footer { display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px; margin-top:25px; color:var(--muted); font:12px monospace; letter-spacing:1px; }
+  .solar-footer a { color:var(--cyan); }
+  @media(max-width:800px) { .solar-hero { grid-template-columns:1fr; } .solar-orbit-art { min-height:240px; } .planet-grid { grid-template-columns:1fr; } }
+  @media(max-width:520px) { .planet-entry { grid-template-columns:88px 1fr; gap:12px; } .planet-visual img { width:76px; height:90px; } .planet-heading { align-items:flex-start; flex-direction:column; } .minor-grid { grid-template-columns:1fr; } .solar-facts { gap:12px; } }
+</style>

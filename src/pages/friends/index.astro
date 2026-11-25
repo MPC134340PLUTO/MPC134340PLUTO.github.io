@@ -1,0 +1,12 @@
+---
+import SiteLayout from '../../layouts/SiteLayout.astro';
+import PageIntro from '../../components/PageIntro.astro';
+import { friends } from '../../data/friends';
+const safeFriends=friends.filter(f=>{try{return ['https:','http:'].includes(new URL(f.url).protocol)}catch{return false}});
+---
+<SiteLayout title="星际友邻 | Star Neighbors" description="寻找星海中的其他个人网站。">
+<section class="page-container neighbors"><PageIntro eyebrow="STAR NEIGHBORS" title="星际友邻" description="每一个独立网站，都是星海中一束独特的光。" />
+<div class="neighbor-intro"><h2>连接另一颗星</h2><p>欢迎个人博客、技术站点、创作空间交换友链。</p><a href="/radio/#transmit">通过宇宙电台申请友链 ↗</a></div>
+{safeFriends.length ? <div class="neighbor-list">{safeFriends.map((f,i)=><a href={f.url} target="_blank" rel="noopener noreferrer"><span class="neighbor-icon" aria-hidden="true">{f.icon ? <img src={f.icon} alt="" loading="lazy" referrerpolicy="no-referrer" /> : f.name.slice(0,1).toUpperCase()}</span><div><small>STAR {String(i+1).padStart(2,'0')}</small><h2>{f.name}</h2><p>{f.description}</p><small>{new URL(f.url).hostname}</small><p class="neighbor-tags">{f.tags?.join(" · ")}</p></div><span aria-hidden="true">↗</span></a>)}</div>:<p class="empty">友邻星图正在等待第一束信号。</p>}
+<p class="muted">交换友链时请附上网站名称、网址及一句简介。</p></section></SiteLayout>
+<style>.neighbor-intro{padding:35px 0;border-bottom:1px solid var(--border)}.neighbor-intro a{color:var(--cyan);text-decoration:underline}.neighbor-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:28px;margin:40px 0}.neighbor-list a{display:flex;align-items:center;gap:18px;border-bottom:1px solid var(--border);padding:18px 0;color:var(--text)}.neighbor-list a>span{color:var(--cyan);font-size:25px}.neighbor-list h2{margin:5px 0;font-size:23px}.neighbor-list p,.muted,.empty{color:var(--muted)}.neighbor-list small{color:var(--cyan);font-family:var(--font-pixel-en,monospace)}.empty{padding:45px 0}.neighbor-list .neighbor-icon{display:grid;place-items:center;flex:0 0 54px;height:54px;background:#172640;border:1px solid #83ced255;border-radius:12px;font-size:22px}.neighbor-icon img{width:34px;height:34px;object-fit:contain}.neighbor-tags{font-size:13px;margin:6px 0}</style>

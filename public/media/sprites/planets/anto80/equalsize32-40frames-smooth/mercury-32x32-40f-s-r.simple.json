@@ -1,0 +1,13 @@
+{
+  "image": "mercury-32x32-40f-s-r.png",
+  "frame_width": 32,
+  "frame_height": 32,
+  "pivot_x": 16,
+  "pivot_y": 16,
+  "columns": 20,
+  "rows": 2,
+  "frame_count": 40,
+  "frame_delay": 2,
+  "fps": 30,
+  "order": "left-to-right, top-to-bottom"
+}

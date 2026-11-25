@@ -1,0 +1,59 @@
+<dialog class="image-viewer" data-image-viewer aria-labelledby="image-viewer-title">
+  <div class="viewer-bar">
+    <h2 id="image-viewer-title" data-viewer-title>影像预览</h2>
+    <button type="button" data-viewer-close autofocus>关闭</button>
+  </div>
+  <img data-viewer-image alt="" />
+  <div class="viewer-bar viewer-controls">
+    <button type="button" data-viewer-prev>上一张</button>
+    <span data-viewer-count aria-live="polite"></span>
+    <a data-viewer-original target="_blank" rel="noopener">查看原图</a>
+    <button type="button" data-viewer-next>下一张</button>
+  </div>
+</dialog>
+<script>
+  const dialog = document.querySelector<HTMLDialogElement>('[data-image-viewer]');
+  const links = Array.from(document.querySelectorAll<HTMLAnchorElement>('a[data-gallery-item]'));
+  const image = dialog?.querySelector<HTMLImageElement>('[data-viewer-image]');
+  const title = dialog?.querySelector<HTMLElement>('[data-viewer-title]');
+  const count = dialog?.querySelector<HTMLElement>('[data-viewer-count]');
+  const original = dialog?.querySelector<HTMLAnchorElement>('[data-viewer-original]');
+  let index = 0;
+  let opener: HTMLAnchorElement | undefined;
+  function show(next: number) {
+    if (!links.length || !image || !title || !count || !original) return;
+    index = (next + links.length) % links.length;
+    const link = links[index];
+    const name = link.dataset.galleryItem || '影像预览';
+    image.src = link.href; image.alt = name;
+    title.textContent = name;
+    count.textContent = `${index + 1} / ${links.length}`;
+    original.href = link.href;
+  }
+  if (dialog && typeof dialog.showModal === 'function') {
+    links.forEach((link, i) => link.addEventListener('click', event => {
+      if (event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
+      event.preventDefault(); opener = link; show(i); dialog.showModal();
+    }));
+    dialog.querySelector('[data-viewer-close]')?.addEventListener('click', () => dialog.close());
+    dialog.querySelector('[data-viewer-prev]')?.addEventListener('click', () => show(index - 1));
+    dialog.querySelector('[data-viewer-next]')?.addEventListener('click', () => show(index + 1));
+    dialog.addEventListener('keydown', event => {
+      if (event.key === 'ArrowLeft' || event.key === 'ArrowRight') {
+        event.preventDefault(); show(index + (event.key === 'ArrowLeft' ? -1 : 1));
+      }
+    });
+    dialog.addEventListener('close', () => opener?.focus());
+    dialog.addEventListener('click', event => { if (event.target === dialog) dialog.close(); });
+  }
+</script>
+<style>
+  .image-viewer { width:min(900px,94vw); max-height:94vh; max-height:94dvh; overflow:auto; background:#0b1428; color:#edf1ff; border:1px solid var(--border); padding:clamp(12px,2vw,24px); }
+  .image-viewer::backdrop { background:rgba(3,7,17,.88); }
+  .viewer-bar { display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:10px; }
+  h2 { font-size:20px; margin:0; }
+  img { display:block; width:100%; max-height:66vh; max-height:66dvh; object-fit:contain; margin:14px auto; }
+  button, a { color:var(--cyan); background:transparent; border:1px solid var(--border); padding:9px 12px; min-height:44px; font:inherit; cursor:pointer; }
+  .viewer-controls span { color:var(--muted); }
+  :is(button,a):focus-visible { outline:2px solid var(--cyan); outline-offset:3px; }
+</style>

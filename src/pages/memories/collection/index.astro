@@ -1,0 +1,20 @@
+---
+import SiteLayout from '../../../layouts/SiteLayout.astro';
+import PageIntro from '../../../components/PageIntro.astro';
+import ImageViewer from '../../../components/ImageViewer.astro';
+import { originalGallery } from '../../../data/originalGallery';
+const groups = ['深空场景','星系','星云','主题插画'];
+---
+<SiteLayout title="宇宙影像图鉴 | Cosmic Collection" description="浏览收藏的宇宙场景、星系和星云插画。">
+  <section class="page-container collection-page">
+    <PageIntro eyebrow="COSMIC COLLECTION" title="宇宙影像图鉴" description="十五幅宇宙主题影像，按场景与题材整理。点击图片查看原图。" />
+    <nav class="collection-nav" aria-label="影像分类">{groups.map((group,i)=><a href={`#group-${i}`}>{group}</a>)}</nav>
+    {groups.map((group,i)=>(<section class="collection-group" id={`group-${i}`}><h2>{group}</h2><div class="collection-grid">{originalGallery.filter(item=>item.category===group).map(item=><figure><a href={item.src} data-gallery-item={item.title} aria-label={`查看${item.title}`}><img src={item.src} alt={item.title} loading="lazy" decoding="async" /></a><figcaption>{item.title}</figcaption></figure>)}</div></section>))}
+    <p class="notice">影像使用描述性名称；部分来源与授权待核实。</p>
+    <a href="/memories/">← 返回记忆星球</a>
+    <ImageViewer />
+  </section>
+</SiteLayout>
+<style>
+  .collection-nav{display:flex;flex-wrap:wrap;gap:12px 24px;margin:24px 0;}.collection-nav a{color:var(--cyan);border-bottom:1px solid var(--border);padding:8px 0;}.collection-group{margin:48px 0;scroll-margin-top:24px;}.collection-group h2{font-size:28px;margin-bottom:18px;}.collection-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:20px;}.collection-grid figure{margin:0;min-width:0;}.collection-grid a{display:block;background:#070d1b;}.collection-grid img{display:block;width:100%;aspect-ratio:16/10;object-fit:contain;}.collection-grid figcaption{padding:10px 0;font-size:16px;color:var(--text);}.notice{color:var(--muted);font-size:14px;line-height:1.8;margin:32px 0;}a:focus-visible{outline:2px solid var(--cyan);outline-offset:4px;}
+</style>

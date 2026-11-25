@@ -1,0 +1,59 @@
+<div class="motion-control" data-motion-control hidden>
+  <button type="button" data-motion-toggle aria-pressed="false">行星动效</button>
+  <span data-motion-status aria-live="polite">静态预览</span>
+</div>
+
+<script>
+  const controls = document.querySelectorAll<HTMLElement>('[data-motion-control]');
+  const images = Array.from(document.querySelectorAll<HTMLImageElement>('img[data-motion-src]'));
+  const preference = window.matchMedia('(prefers-reduced-motion: reduce)');
+  let enabled = !preference.matches;
+  const visible = new Set<HTMLImageElement>();
+  const staticSources = new Map(images.map(img => [img, img.getAttribute('src') || '']));
+
+  function updateImage(img: HTMLImageElement) {
+    const source = enabled && visible.has(img) && !document.hidden
+      ? img.dataset.motionSrc : staticSources.get(img);
+    if (source && img.getAttribute('src') !== source) img.setAttribute('src', source);
+  }
+  function update() {
+    images.forEach(updateImage);
+    controls.forEach(control => {
+      const button = control.querySelector<HTMLButtonElement>('[data-motion-toggle]');
+      const status = control.querySelector<HTMLElement>('[data-motion-status]');
+      button?.setAttribute('aria-pressed', String(enabled));
+      if (status) status.textContent = enabled ? '已开启 · 仅播放屏幕附近的行星' : '已暂停 · 静态预览';
+    });
+  }
+  if (images.length) {
+    if ('IntersectionObserver' in window) {
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          const img = entry.target as HTMLImageElement;
+          if (entry.isIntersecting) visible.add(img); else visible.delete(img);
+          updateImage(img);
+        });
+      }, { rootMargin: '80px' });
+      images.forEach(img => observer.observe(img));
+    } else {
+      images.forEach(img => visible.add(img));
+    }
+    controls.forEach(control => {
+      control.hidden = false;
+      control.querySelector('[data-motion-toggle]')?.addEventListener('click', () => {
+        enabled = !enabled;
+        update();
+      });
+    });
+    preference.addEventListener('change', event => { enabled = !event.matches; update(); });
+    document.addEventListener('visibilitychange', update);
+    update();
+  }
+</script>
+<style>
+  .motion-control:not([hidden]) { display:flex; flex-wrap:wrap; align-items:center; gap:10px 16px; margin:20px 0; }
+  button { cursor:pointer; color:var(--cyan); background:transparent; border:1px solid var(--border); padding:8px 15px; font:inherit; min-height:44px; }
+  button[aria-pressed="true"] { border-color:var(--cyan); }
+  button:focus-visible { outline:2px solid var(--cyan); outline-offset:4px; }
+  span { color:var(--muted); font-size:13px; }
+</style>
