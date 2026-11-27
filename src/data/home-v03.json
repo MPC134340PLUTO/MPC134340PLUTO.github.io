@@ -1,0 +1,617 @@
+{
+  "assets": {
+    "blue": "/media/home-v03/blue.png",
+    "blueStars": "/media/home-v03/blueStars.png",
+    "red": "/media/home-v03/red.png",
+    "redStars": "/media/home-v03/redStars.png",
+    "redFar": "/media/home-v03/redFar.png",
+    "redPlanet": "/media/home-v03/redPlanet.png",
+    "ring": "/media/home-v03/ring.png",
+    "blueMoon": "/media/home-v03/blueMoon.png",
+    "smallBlue": "/media/home-v03/smallBlue.png",
+    "rock1": "/media/home-v03/rock1.png",
+    "rock2": "/media/home-v03/rock2.png",
+    "heroPlanet": "/media/home-v03/heroPlanet.png",
+    "violetPlanet": "/media/home-v03/violetPlanet.png",
+    "purple": "/media/home-v03/purple.png",
+    "shooterRock": "/media/home-v03/shooterRock.png",
+    "earth": "/media/home-v03/earth.png",
+    "ship1_0": "/media/home-v03/ship1_0.png",
+    "ship1_1": "/media/home-v03/ship1_1.png",
+    "ship1_2": "/media/home-v03/ship1_2.png",
+    "ship2_0": "/media/home-v03/ship2_0.png",
+    "ship2_1": "/media/home-v03/ship2_1.png",
+    "ship2_2": "/media/home-v03/ship2_2.png",
+    "ship3_0": "/media/home-v03/ship3_0.png",
+    "ship3_1": "/media/home-v03/ship3_1.png",
+    "ship3_2": "/media/home-v03/ship3_2.png",
+    "thumb_deep": "/media/home-v03/thumb_deep.png",
+    "thumb_violet": "/media/home-v03/thumb_violet.png",
+    "thumb_crimson": "/media/home-v03/thumb_crimson.png",
+    "thumb_orbit": "/media/home-v03/thumb_orbit.png",
+    "thumb_frontier": "/media/home-v03/thumb_frontier.png",
+    "thumb_last": "/media/home-v03/thumb_last.png",
+    "rockVoid": "/media/home-v03/rockVoid.png",
+    "rockB": "/media/home-v03/rockB.png",
+    "rockC": "/media/home-v03/rockC.png",
+    "farStars": "/media/home-v03/farStars.png",
+    "cover_galaxy": "/media/home-v03/cover_galaxy.png",
+    "cover_cabin": "/media/home-v03/cover_cabin.png",
+    "cover_hangar": "/media/home-v03/cover_hangar.png",
+    "cover_voyage": "/media/home-v03/cover_voyage.png",
+    "cover_observatory": "/media/home-v03/cover_observatory.png",
+    "cover_archive": "/media/home-v03/cover_archive.png",
+    "cover_solar": "/media/home-v03/cover_solar.png",
+    "cover_memories": "/media/home-v03/cover_memories.png",
+    "cover_workbench": "/media/home-v03/cover_workbench.png",
+    "cover_collection": "/media/home-v03/cover_collection.png",
+    "cover_radio": "/media/home-v03/cover_radio.png",
+    "cover_oracle": "/media/home-v03/cover_oracle.png",
+    "cover_friends": "/media/home-v03/cover_friends.png",
+    "cover_explore": "/media/home-v03/cover_explore.png",
+    "frontier_terrain": "/media/home-v03/frontier_terrain.png",
+    "last_terrain": "/media/home-v03/last_terrain.png",
+    "icon_ship": "/media/home-v03/icon-ship.png"
+  },
+  "scenes": [
+    {
+      "id": "deep",
+      "cn": "深空启航",
+      "en": "DEEP SPACE",
+      "desc": "离开轨道，向遥远的蓝色星域启航。",
+      "accent": "#89d5ef",
+      "bg": [
+        "blue",
+        "blueStars"
+      ],
+      "layout": "A1",
+      "layers": [
+        {
+          "a": "smallBlue",
+          "x": 82,
+          "y": 13,
+          "w": 8,
+          "depth": 1,
+          "mobile": null,
+          "frames": null
+        },
+        {
+          "a": "heroPlanet",
+          "x": 78,
+          "y": 47,
+          "w": 49,
+          "depth": 2,
+          "mobile": [
+            69,
+            30,
+            75
+          ],
+          "frames": null
+        },
+        {
+          "a": "blueMoon",
+          "x": 56,
+          "y": 20,
+          "w": 4,
+          "depth": 2,
+          "mobile": null,
+          "frames": null
+        },
+        {
+          "a": "ship1_0",
+          "x": 68,
+          "y": 73,
+          "w": 24,
+          "depth": 3,
+          "mobile": [
+            68,
+            47,
+            42
+          ],
+          "frames": [
+            "ship1_0",
+            "ship1_1",
+            "ship1_2"
+          ]
+        },
+        {
+          "a": "rock1",
+          "x": 95,
+          "y": 85,
+          "w": 9,
+          "depth": 4,
+          "mobile": null,
+          "frames": null
+        },
+        {
+          "a": "rock2",
+          "x": 48,
+          "y": 82,
+          "w": 4,
+          "depth": 3,
+          "mobile": null,
+          "frames": null
+        },
+        {
+          "a": "rock2",
+          "x": 94,
+          "y": 12,
+          "w": 3,
+          "depth": 1,
+          "mobile": null,
+          "frames": null
+        },
+        {
+          "a": "rockC",
+          "x": 89,
+          "y": 68,
+          "w": 2.5,
+          "depth": 2
+        }
+      ],
+      "hotspots": [
+        {
+          "id": "galaxy",
+          "x": 90,
+          "y": 30
+        }
+      ]
+    },
+    {
+      "id": "violet",
+      "cn": "紫色星域",
+      "en": "VIOLET NEBULA",
+      "desc": "穿过星云深处，寻找遥远的天体信号。",
+      "accent": "#d8b3ff",
+      "bg": [
+        "purple",
+        "blueStars"
+      ],
+      "layout": "A1",
+      "layers": [
+        {
+          "a": "violetPlanet",
+          "x": 73,
+          "y": 41,
+          "w": 39,
+          "depth": 2,
+          "mobile": [
+            65,
+            28,
+            64
+          ],
+          "frames": null
+        },
+        {
+          "a": "blueMoon",
+          "x": 93,
+          "y": 24,
+          "w": 8,
+          "depth": 2,
+          "mobile": null,
+          "frames": null
+        },
+        {
+          "a": "ship2_0",
+          "x": 81,
+          "y": 75,
+          "w": 23,
+          "depth": 3,
+          "mobile": [
+            70,
+            46,
+            42
+          ],
+          "frames": [
+            "ship2_0",
+            "ship2_1",
+            "ship2_2"
+          ]
+        },
+        {
+          "a": "rock1",
+          "x": 52,
+          "y": 80,
+          "w": 7,
+          "depth": 4,
+          "mobile": null,
+          "frames": null
+        },
+        {
+          "a": "rock2",
+          "x": 96,
+          "y": 74,
+          "w": 4,
+          "depth": 2,
+          "mobile": null,
+          "frames": null
+        }
+      ],
+      "hotspots": [
+        {
+          "id": "galaxy",
+          "x": 89,
+          "y": 25
+        }
+      ]
+    },
+    {
+      "id": "crimson",
+      "cn": "赤色深空",
+      "en": "CRIMSON SPACE",
+      "desc": "沿着赤色星尘的边缘继续远航。",
+      "accent": "#f0b190",
+      "bg": [
+        "red",
+        "redStars",
+        "redFar"
+      ],
+      "layout": "A1",
+      "layers": [
+        {
+          "a": "redPlanet",
+          "x": 81,
+          "y": 38,
+          "w": 45,
+          "depth": 2,
+          "mobile": [
+            71,
+            28,
+            72
+          ],
+          "frames": null
+        },
+        {
+          "a": "ship3_0",
+          "x": 68,
+          "y": 72,
+          "w": 30,
+          "depth": 3,
+          "mobile": [
+            70,
+            48,
+            55
+          ],
+          "frames": [
+            "ship3_0",
+            "ship3_1",
+            "ship3_2"
+          ]
+        },
+        {
+          "a": "shooterRock",
+          "x": 96,
+          "y": 82,
+          "w": 6,
+          "depth": 3,
+          "mobile": null,
+          "frames": null
+        },
+        {
+          "a": "rock2",
+          "x": 52,
+          "y": 23,
+          "w": 3,
+          "depth": 2,
+          "mobile": null,
+          "frames": null
+        },
+        {
+          "a": "rockB",
+          "x": 56,
+          "y": 83,
+          "w": 4,
+          "depth": 3
+        }
+      ],
+      "hotspots": [
+        {
+          "id": "solar",
+          "x": 91,
+          "y": 25
+        }
+      ]
+    },
+    {
+      "id": "orbit",
+      "cn": "星环系统",
+      "en": "ORBITAL SYSTEM",
+      "desc": "在多天体轨道之间，辨认新的远航目的地。",
+      "accent": "#a5bcd9",
+      "bg": [
+        "red",
+        "redStars",
+        "farStars"
+      ],
+      "layout": "A2",
+      "layers": [
+        {
+          "a": "ring",
+          "x": 74,
+          "y": 42,
+          "w": 20,
+          "depth": 2,
+          "mobile": [
+            74,
+            29,
+            33
+          ],
+          "frames": null
+        },
+        {
+          "a": "earth",
+          "x": 91,
+          "y": 56,
+          "w": 18,
+          "depth": 2,
+          "mobile": [
+            89,
+            44,
+            29
+          ],
+          "frames": null
+        },
+        {
+          "a": "smallBlue",
+          "x": 58,
+          "y": 22,
+          "w": 11,
+          "depth": 1,
+          "mobile": null,
+          "frames": null
+        },
+        {
+          "a": "ship1_0",
+          "x": 61,
+          "y": 74,
+          "w": 20,
+          "depth": 3,
+          "mobile": [
+            45,
+            47,
+            41
+          ],
+          "frames": [
+            "ship1_0",
+            "ship1_1",
+            "ship1_2"
+          ]
+        },
+        {
+          "a": "rock1",
+          "x": 93,
+          "y": 86,
+          "w": 10,
+          "depth": 4,
+          "mobile": null,
+          "frames": null
+        },
+        {
+          "a": "rock2",
+          "x": 49,
+          "y": 82,
+          "w": 5,
+          "depth": 3,
+          "mobile": null,
+          "frames": null
+        },
+        {
+          "a": "rock2",
+          "x": 94,
+          "y": 13,
+          "w": 4,
+          "depth": 1,
+          "mobile": null,
+          "frames": null
+        },
+        {
+          "a": "rockVoid",
+          "x": 87,
+          "y": 13,
+          "w": 5,
+          "depth": 2
+        }
+      ],
+      "hotspots": [
+        {
+          "id": "solar",
+          "x": 63,
+          "y": 34
+        },
+        {
+          "id": "galaxy",
+          "x": 92,
+          "y": 24
+        }
+      ]
+    },
+    {
+      "id": "frontier",
+      "cn": "异星边境",
+      "en": "ALIEN FRONTIER",
+      "desc": "穿越晶体山脉，在陌生地平线上寻找落脚点。",
+      "accent": "#91e6db",
+      "bg": [
+        "frontier_terrain"
+      ],
+      "layout": "A3",
+      "layers": [
+        {
+          "a": "ship2_0",
+          "x": 73,
+          "y": 53,
+          "w": 25,
+          "depth": 3,
+          "mobile": [
+            67,
+            35,
+            45
+          ],
+          "frames": [
+            "ship2_0",
+            "ship2_1",
+            "ship2_2"
+          ]
+        }
+      ],
+      "hotspots": [
+        {
+          "id": "voyage",
+          "x": 88,
+          "y": 22
+        }
+      ]
+    },
+    {
+      "id": "last",
+      "cn": "星球暮光",
+      "en": "LAST LIGHT",
+      "desc": "航行暂歇，在异星群山之间等待下一次启程。",
+      "accent": "#f6c0a1",
+      "bg": [
+        "last_terrain"
+      ],
+      "layout": "A3",
+      "layers": [
+        {
+          "a": "ship1_0",
+          "x": 77,
+          "y": 54,
+          "w": 22,
+          "depth": 3,
+          "mobile": [
+            65,
+            38,
+            43
+          ],
+          "frames": [
+            "ship1_0",
+            "ship1_1",
+            "ship1_2"
+          ]
+        }
+      ],
+      "hotspots": [
+        {
+          "id": "memories",
+          "x": 90,
+          "y": 23
+        }
+      ]
+    }
+  ],
+  "destinations": [
+    {
+      "id": "galaxy",
+      "cn": "星系图谱",
+      "en": "GALACTIC ATLAS",
+      "href": "/galaxy/",
+      "desc": "探索星系与航线",
+      "cover": "cover_galaxy"
+    },
+    {
+      "id": "cabin",
+      "cn": "个人舱",
+      "en": "ORBITAL HABITAT",
+      "href": "/cabin/",
+      "desc": "返回轨道生活空间",
+      "cover": "cover_cabin"
+    },
+    {
+      "id": "hangar",
+      "cn": "星际机库",
+      "en": "STARSHIP HANGAR",
+      "href": "/hangar/",
+      "desc": "选择飞船，准备航行",
+      "cover": "cover_hangar"
+    },
+    {
+      "id": "voyage",
+      "cn": "航行训练",
+      "en": "VOYAGE",
+      "href": "/hangar/voyage/",
+      "desc": "操控飞船，收集信标",
+      "cover": "cover_voyage"
+    },
+    {
+      "id": "observatory",
+      "cn": "深空观测",
+      "en": "OBSERVATORY",
+      "href": "/observatory/",
+      "desc": "探索天文影像",
+      "cover": "cover_observatory"
+    },
+    {
+      "id": "archive",
+      "cn": "知识档案",
+      "en": "ARCHIVE",
+      "href": "/archive/",
+      "desc": "算法、科研与学习笔记",
+      "cover": "cover_archive"
+    },
+    {
+      "id": "solar",
+      "cn": "太阳系",
+      "en": "SOLAR SYSTEM",
+      "href": "/solar-system/",
+      "desc": "认识太阳系行星",
+      "cover": "cover_solar"
+    },
+    {
+      "id": "memories",
+      "cn": "记忆星球",
+      "en": "MEMORIES",
+      "href": "/memories/",
+      "desc": "浏览个人收藏与影像",
+      "cover": "cover_memories"
+    },
+    {
+      "id": "workbench",
+      "cn": "个人工作台",
+      "en": "WORKBENCH",
+      "href": "/cabin/workbench/",
+      "desc": "管理本地任务与学习进度",
+      "cover": "cover_workbench"
+    },
+    {
+      "id": "collection",
+      "cn": "宇宙影像图鉴",
+      "en": "COLLECTION",
+      "href": "/memories/collection/",
+      "desc": "欣赏宇宙主题图片",
+      "cover": "cover_collection"
+    },
+    {
+      "id": "radio",
+      "cn": "宇宙电台",
+      "en": "COSMIC RADIO",
+      "href": "/radio/",
+      "desc": "发送讯息，阅读公开留言",
+      "cover": "cover_radio"
+    },
+    {
+      "id": "oracle",
+      "cn": "星辰来签",
+      "en": "STAR ORACLE",
+      "href": "/oracle/",
+      "desc": "领取今日星签",
+      "cover": "cover_oracle"
+    },
+    {
+      "id": "friends",
+      "cn": "星际友邻",
+      "en": "STAR NEIGHBORS",
+      "href": "/friends/",
+      "desc": "探索朋友们的网站",
+      "cover": "cover_friends"
+    },
+    {
+      "id": "explore",
+      "cn": "全站探索",
+      "en": "EXPLORE",
+      "href": "/explore/",
+      "desc": "浏览所有目的地",
+      "cover": "cover_explore"
+    }
+  ]
+}

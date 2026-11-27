@@ -1,32 +1,22 @@
-
 ---
 import Layout from './Layout.astro';
 import SiteHeader from '../components/SiteHeader.astro';
 import SiteFooter from '../components/SiteFooter.astro';
-
 import '../styles/global.css';
 import { getPageBackground } from '../data/pageBackgrounds';
-const backdrop = getPageBackground(Astro.url.pathname);
-
-const {
-  title = 'Pixel Universe',
-  description = 'A little corner of the cosmos.'
-} = Astro.props;
+import galaxy from '../data/galaxy-v02.json';
+import { normalizePath } from '../data/navigation';
+const backdrop = ['/galaxy', '/explore'].includes(normalizePath(Astro.url.pathname)) ? null : getPageBackground(Astro.url.pathname);
+const visitNode = galaxy.nodes.find(node => normalizePath(node.href) === normalizePath(Astro.url.pathname));
+const { title = 'Pixel Universe', description = 'A little corner of the cosmos.' } = Astro.props;
 ---
-
-<Layout
-  title={title}
-  description={description}
->
-  <div class="site-shell">
-
+<Layout title={title} description={description}>
+  <div class="site-shell" data-galaxy-visit={visitNode?.id}>
     <SiteHeader />
-
     <main id="main-content" class:list={{'has-page-backdrop': Boolean(backdrop)}} style={backdrop ? `--page-image:url('${backdrop.src}');--page-position:${backdrop.position};--page-strength:${backdrop.strength}` : undefined}>
       <slot />
     </main>
-
     <SiteFooter />
-
   </div>
+  <script is:inline defer src="/scripts/galaxy-v02-visit.js"></script>
 </Layout>

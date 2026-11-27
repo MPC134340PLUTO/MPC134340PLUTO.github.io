@@ -1,0 +1,460 @@
+{
+  "nodes": [
+    {
+      "id": "home",
+      "name": "首页",
+      "nameEn": "HOME",
+      "href": "/",
+      "category": "hub",
+      "x": 600,
+      "y": 365,
+      "primary": true,
+      "art": "hub-station.png",
+      "description": "远航枢纽，返回宇宙首页",
+      "parentId": null,
+      "keywords": [
+        "首页",
+        "HOME",
+        "hub",
+        "",
+        "中央枢纽",
+        "空间站"
+      ],
+      "status": "source-confirmed",
+      "visibility": "main"
+    },
+    {
+      "id": "cabin",
+      "name": "个人舱",
+      "nameEn": "CABIN",
+      "href": "/cabin/",
+      "category": "personal",
+      "x": 260,
+      "y": 208,
+      "primary": true,
+      "art": "amber.png",
+      "description": "进入个人舱与轨道生活空间",
+      "parentId": "home",
+      "keywords": [
+        "个人舱",
+        "CABIN",
+        "personal",
+        "home"
+      ],
+      "status": "source-confirmed",
+      "visibility": "main"
+    },
+    {
+      "id": "workbench",
+      "name": "个人工作台",
+      "nameEn": "WORKBENCH",
+      "href": "/cabin/workbench/",
+      "category": "personal",
+      "x": 115,
+      "y": 320,
+      "primary": false,
+      "art": "supply-module.png",
+      "description": "管理本地任务与学习进度",
+      "parentId": "cabin",
+      "keywords": [
+        "个人工作台",
+        "WORKBENCH",
+        "personal",
+        "cabin",
+        "待办",
+        "任务"
+      ],
+      "status": "source-confirmed",
+      "visibility": "secondary"
+    },
+    {
+      "id": "memories",
+      "name": "记忆星球",
+      "nameEn": "MEMORIES",
+      "href": "/memories/",
+      "category": "personal",
+      "x": 415,
+      "y": 125,
+      "primary": true,
+      "art": "planet-nu.png",
+      "description": "浏览记忆、收藏与个人影像",
+      "parentId": "home",
+      "keywords": [
+        "记忆星球",
+        "MEMORIES",
+        "personal",
+        "home"
+      ],
+      "status": "source-confirmed",
+      "visibility": "main"
+    },
+    {
+      "id": "archive",
+      "name": "知识档案",
+      "nameEn": "ARCHIVE",
+      "href": "/archive/",
+      "category": "knowledge",
+      "x": 838,
+      "y": 165,
+      "primary": true,
+      "art": "neptune.png",
+      "description": "归档科研、算法与学习笔记",
+      "parentId": "home",
+      "keywords": [
+        "知识档案",
+        "ARCHIVE",
+        "knowledge",
+        "home",
+        "论文",
+        "科研",
+        "学习",
+        "知识库"
+      ],
+      "status": "source-confirmed",
+      "visibility": "main"
+    },
+    {
+      "id": "explore",
+      "name": "全站探索",
+      "nameEn": "EXPLORE",
+      "href": "/explore/",
+      "category": "knowledge",
+      "x": 1050,
+      "y": 145,
+      "primary": false,
+      "art": "survey-probe.png",
+      "description": "查看全部目的地与活动",
+      "parentId": "home",
+      "keywords": [
+        "全站探索",
+        "EXPLORE",
+        "knowledge",
+        "home",
+        "目录",
+        "导航"
+      ],
+      "status": "source-confirmed",
+      "visibility": "secondary"
+    },
+    {
+      "id": "solar",
+      "name": "太阳系",
+      "nameEn": "SOLAR SYSTEM",
+      "href": "/solar-system/",
+      "category": "deep",
+      "x": 220,
+      "y": 520,
+      "primary": true,
+      "art": "sun.png",
+      "description": "从太阳到冥王星的轨道与行星知识",
+      "parentId": "home",
+      "keywords": [
+        "太阳系",
+        "SOLAR SYSTEM",
+        "deep",
+        "home"
+      ],
+      "status": "source-confirmed",
+      "visibility": "main"
+    },
+    {
+      "id": "observatory",
+      "name": "深空观测",
+      "nameEn": "OBSERVATORY",
+      "href": "/observatory/",
+      "category": "deep",
+      "x": 405,
+      "y": 570,
+      "primary": true,
+      "art": "survey-ship.png",
+      "description": "探索天文影像与观测资料",
+      "parentId": "solar",
+      "keywords": [
+        "深空观测",
+        "OBSERVATORY",
+        "deep",
+        "solar",
+        "望远镜",
+        "天文"
+      ],
+      "status": "source-confirmed",
+      "visibility": "main"
+    },
+    {
+      "id": "collection",
+      "name": "宇宙影像图鉴",
+      "nameEn": "COLLECTION",
+      "href": "/memories/collection/",
+      "category": "deep",
+      "x": 110,
+      "y": 675,
+      "primary": false,
+      "art": "ring.png",
+      "description": "浏览宇宙主题图鉴",
+      "parentId": "memories",
+      "keywords": [
+        "宇宙影像图鉴",
+        "COLLECTION",
+        "deep",
+        "memories"
+      ],
+      "status": "source-confirmed",
+      "visibility": "secondary"
+    },
+    {
+      "id": "galaxy",
+      "name": "星系图谱",
+      "nameEn": "GALAXY",
+      "href": "/galaxy/",
+      "category": "deep",
+      "x": 540,
+      "y": 690,
+      "primary": false,
+      "art": "planet-phi.png",
+      "description": "查看当前星图与星系导航网络",
+      "parentId": "home",
+      "keywords": [
+        "星系图谱",
+        "GALAXY",
+        "deep",
+        "home"
+      ],
+      "status": "source-confirmed",
+      "visibility": "secondary"
+    },
+    {
+      "id": "hangar",
+      "name": "星际机库",
+      "nameEn": "HANGAR",
+      "href": "/hangar/",
+      "category": "activity",
+      "x": 870,
+      "y": 395,
+      "primary": true,
+      "art": "shipyard.png",
+      "description": "选择飞船并进行强化",
+      "parentId": "home",
+      "keywords": [
+        "星际机库",
+        "HANGAR",
+        "activity",
+        "home",
+        "船坞",
+        "飞船"
+      ],
+      "status": "source-confirmed",
+      "visibility": "main"
+    },
+    {
+      "id": "voyage",
+      "name": "航行训练",
+      "nameEn": "VOYAGE",
+      "href": "/hangar/voyage/",
+      "category": "activity",
+      "x": 1080,
+      "y": 500,
+      "primary": false,
+      "art": "courier-1.png",
+      "description": "操控飞船、收集信标",
+      "parentId": "hangar",
+      "keywords": [
+        "航行训练",
+        "VOYAGE",
+        "activity",
+        "hangar",
+        "游戏",
+        "训练"
+      ],
+      "status": "source-confirmed",
+      "visibility": "secondary"
+    },
+    {
+      "id": "radio",
+      "name": "宇宙电台",
+      "nameEn": "COSMIC RADIO",
+      "href": "/radio/",
+      "category": "activity",
+      "x": 760,
+      "y": 570,
+      "primary": true,
+      "art": "comm-beacon.png",
+      "description": "深空电波、公开留言与频道信息",
+      "parentId": "home",
+      "keywords": [
+        "宇宙电台",
+        "COSMIC RADIO",
+        "activity",
+        "home",
+        "留言",
+        "通讯"
+      ],
+      "status": "source-confirmed",
+      "visibility": "main"
+    },
+    {
+      "id": "oracle",
+      "name": "星辰来签",
+      "nameEn": "STAR ORACLE",
+      "href": "/oracle/",
+      "category": "activity",
+      "x": 945,
+      "y": 680,
+      "primary": false,
+      "art": "planet-omicron.png",
+      "description": "领取星签与小挑战",
+      "parentId": "home",
+      "keywords": [
+        "星辰来签",
+        "STAR ORACLE",
+        "activity",
+        "home"
+      ],
+      "status": "source-confirmed",
+      "visibility": "secondary"
+    },
+    {
+      "id": "friends",
+      "name": "星际友邻",
+      "nameEn": "STAR NEIGHBORS",
+      "href": "/friends/",
+      "category": "activity",
+      "x": 1080,
+      "y": 285,
+      "primary": false,
+      "art": "terran.png",
+      "description": "访问友邻站点与外部世界",
+      "parentId": "home",
+      "keywords": [
+        "星际友邻",
+        "STAR NEIGHBORS",
+        "activity",
+        "home"
+      ],
+      "status": "source-confirmed",
+      "visibility": "secondary"
+    }
+  ],
+  "sectors": {
+    "hub": {
+      "name": "中央枢纽",
+      "en": "MPC NEXUS",
+      "color": "#82d9ea",
+      "label": [
+        600,
+        245
+      ]
+    },
+    "personal": {
+      "name": "个人星域",
+      "en": "HABITAT",
+      "color": "#d9a46d",
+      "label": [
+        170,
+        90
+      ]
+    },
+    "knowledge": {
+      "name": "知识星域",
+      "en": "ARCHIVE",
+      "color": "#77a9de",
+      "label": [
+        855,
+        52
+      ]
+    },
+    "deep": {
+      "name": "深空星域",
+      "en": "DEEP SPACE",
+      "color": "#72c9bd",
+      "label": [
+        190,
+        445
+      ]
+    },
+    "activity": {
+      "name": "活动星域",
+      "en": "FRONTIER",
+      "color": "#b19ad9",
+      "label": [
+        1000,
+        205
+      ]
+    }
+  },
+  "edges": [
+    [
+      "home",
+      "cabin"
+    ],
+    [
+      "cabin",
+      "workbench"
+    ],
+    [
+      "cabin",
+      "memories"
+    ],
+    [
+      "memories",
+      "archive"
+    ],
+    [
+      "home",
+      "archive"
+    ],
+    [
+      "archive",
+      "explore"
+    ],
+    [
+      "home",
+      "solar"
+    ],
+    [
+      "solar",
+      "observatory"
+    ],
+    [
+      "solar",
+      "collection"
+    ],
+    [
+      "observatory",
+      "galaxy"
+    ],
+    [
+      "galaxy",
+      "radio"
+    ],
+    [
+      "home",
+      "hangar"
+    ],
+    [
+      "hangar",
+      "voyage"
+    ],
+    [
+      "hangar",
+      "friends"
+    ],
+    [
+      "hangar",
+      "radio"
+    ],
+    [
+      "radio",
+      "oracle"
+    ],
+    [
+      "voyage",
+      "oracle"
+    ],
+    [
+      "explore",
+      "friends"
+    ]
+  ],
+  "width": 1200,
+  "height": 780
+}

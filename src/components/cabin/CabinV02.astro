@@ -1,0 +1,108 @@
+---
+import { activities, destinations } from '../../data/navigation';
+import '../../styles/cabin-v02.css';
+
+const navigation = [...destinations, ...activities];
+const hotspotCoordinates = [
+  { href: '/observatory/', x: 25.4, y: 55.6 },
+  { href: '/cabin/workbench/', x: 88.5, y: 60.4 },
+  { href: '/archive/', x: 66.1, y: 54.1 },
+  { href: '/memories/', x: 10.6, y: 66.1 },
+];
+const cabinHotspots = hotspotCoordinates.map((point) => ({
+  ...point,
+  name: navigation.find(({ href }) => href === point.href)?.name ?? point.href,
+}));
+const cabinShortcuts = [
+  ...cabinHotspots,
+  ...navigation.filter(({ href }) => href === '/hangar/' || href === '/hangar/voyage/'),
+];
+---
+
+<section class="cabin-v02 page-container" data-cabin-v02 data-mode="visit">
+      <header class="heading">
+        <div class="identity">
+          <h1>个人舱</h1>
+          <div><span>ORBITAL HABITAT</span><small>OH–02</small></div>
+        </div>
+        <nav class="mode-group" aria-label="舱室模式" hidden>
+          <button type="button" id="cabin-v02-visit-mode" aria-pressed="true">参观</button>
+          <button type="button" id="cabin-v02-edit-mode" aria-pressed="false">布置</button>
+        </nav>
+      </header>
+      <div class="workspace">
+        <section class="scene-dock" aria-label="舱室预览">
+          <div class="scene-head"><strong>舱室视窗 <span>/ OH–02</span></strong><span id="cabin-v02-scene-mode">参观模式</span></div>
+          <div class="scene-image">
+            <canvas id="cabin-v02-scene" width="480" height="270" role="img" aria-label="舱室正在加载"></canvas>
+            <p id="cabin-v02-scene-loading" role="status">正在加载舱室…</p>
+            <div id="cabin-v02-hotspots">
+              {cabinHotspots.map(({ name, href, x, y }) => (
+                <a href={href} aria-label={name} style={`--x:${x}%;--y:${y}%`}><span>{name}</span></a>
+              ))}
+            </div>
+            <div id="cabin-v02-zone" hidden aria-hidden="true"></div>
+          </div>
+          <div class="scene-tail"><span><i></i><span id="cabin-v02-scene-window">舷窗</span></span><span id="cabin-v02-scene-light">日常暖光</span></div>
+        </section>
+        <dl id="cabin-v02-summary" class="snapshot" aria-label="舱室配置"></dl>
+        <aside class="terminal" aria-labelledby="cabin-v02-terminal-title">
+          <header class="terminal-head"><h2 id="cabin-v02-terminal-title">控制终端 <span>/ OH–02</span></h2><span class="status-light" aria-hidden="true"></span></header>
+          <p id="cabin-v02-storage-warning" class="warning" role="status" hidden></p>
+          <section id="cabin-v02-visit">
+            <div class="term-title"><h3>舱室档案</h3><p>用于深空观测、日常记录和模型陈列。</p></div>
+            <dl id="cabin-v02-visit-info" class="visit-info"></dl>
+            <div id="cabin-v02-feature" class="feature"></div>
+            <div class="terminal-foot"><span id="cabin-v02-visit-preset"></span><button id="cabin-v02-visit-edit" type="button" hidden>布置舱室</button></div>
+          </section>
+          <section id="cabin-v02-editor" hidden aria-label="舱室布置">
+            <div id="cabin-v02-tabs" class="tabs" aria-label="选择布置区域"></div>
+            <div id="cabin-v02-picker">
+              <div class="term-title picker-heading"><h3 id="cabin-v02-picker-title" tabindex="-1"></h3><span id="cabin-v02-picker-count"></span></div>
+              <div id="cabin-v02-items" class="items"></div>
+            </div>
+            <section class="presets" aria-labelledby="cabin-v02-preset-title">
+              <h3 id="cabin-v02-preset-title">搭配方案</h3>
+              <div id="cabin-v02-presets" class="preset-buttons"></div>
+              <label class="fx"><input id="cabin-v02-fx" type="checkbox">设备辉光与全息展柜</label>
+            </section>
+            <div class="edit-actions">
+              <div class="actions-status"><span id="cabin-v02-draft-state"></span><span id="cabin-v02-action-status" role="status" aria-atomic="true"></span></div>
+              <div class="action-buttons">
+                <button id="cabin-v02-save" class="primary" type="button">保存</button>
+                <button id="cabin-v02-cancel" type="button">取消</button>
+                <button id="cabin-v02-random" type="button">随机</button>
+                <button id="cabin-v02-reset" type="button">默认</button>
+              </div>
+            </div>
+          </section>
+        </aside>
+      </div>
+      <nav class="shortcuts" aria-label="个人舱快捷入口">
+        <span>快捷访问</span>
+        {cabinShortcuts.map(({ name, href }) => <a href={href}>{name}</a>)}
+      </nav>
+      <footer class="cabin-credits"><span>窗景为艺术表现</span><details><summary>素材与许可</summary>
+        <p>Ansimuz、dog-eared、Carriejanesart、scorcher24 与 Scribe 的授权素材经裁切与合成（包括新增舱壁仪表与远景飞船），采用 <a href="https://creativecommons.org/publicdomain/zero/1.0/">CC0 1.0</a>。</p>
+        <p>轨道星港包含 NettySvit 的 <a href="https://opengameart.org/content/spaceship-tiles">Spaceship Tiles</a>，采用 <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>。原图经裁切、缩放、调暗，重新组合为带太阳能翼和对接口的轨道站。</p>
+      </details></footer>
+
+  <noscript><p>启用 JavaScript 后可布置舱室。下方快捷入口仍可使用。</p></noscript>
+  <dialog id="cabin-v02-leave-dialog" aria-labelledby="cabin-v02-dialog-title">
+    <h2 id="cabin-v02-dialog-title">布置尚未保存</h2>
+    <p>返回参观前请选择如何处理当前修改。</p>
+    <div class="dialog-buttons">
+      <button id="cabin-v02-keep-editing" type="button" autofocus>继续布置</button>
+      <button id="cabin-v02-discard-exit" type="button">放弃并返回</button>
+      <button id="cabin-v02-save-exit" class="primary" type="button">保存并返回</button>
+    </div>
+  </dialog>
+</section>
+
+<script>
+  import { mountCabin } from '../../scripts/cabin-v02.js';
+
+  for (const cabin of document.querySelectorAll<HTMLElement>('[data-cabin-v02]')) {
+    mountCabin(cabin);
+  }
+</script>
